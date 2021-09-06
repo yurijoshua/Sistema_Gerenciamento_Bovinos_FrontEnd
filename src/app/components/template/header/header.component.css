@@ -1,0 +1,23 @@
+img { 
+    height: 1em;
+    width: 1.5em;
+}
+
+.main {
+    height: 10vh;
+    height: -webkit-fill-available;
+    max-height: 10vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+@media screen and ( min-width: 768px) {
+    .cabecalho-mobile {
+        display: none;
+    }
+}
+
+.navbar-toggler {
+    width: 100%;
+}
