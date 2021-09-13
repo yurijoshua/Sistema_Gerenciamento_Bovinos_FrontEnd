@@ -1,0 +1,37 @@
+<div class="mat-elevation-z8">
+    <a href="/relatorios"> <mat-icon> keyboard_backspace </mat-icon> </a>  
+    <form class="pesq-form">
+      <mat-form-field class="pesq-full-width mt-3" appearance="fill">
+          <mat-label>Pesquisar</mat-label>
+          <input matInput type='text' name='pequisa' (input)="Pesquisa()" id="pesquisa">
+      </mat-form-field>
+    </form>
+    <div class="table-responsive divConteudo">
+      <table mat-table [dataSource]="dataSource" matSort class="table table-dark table-hover" id="tabela">
+    
+          <!-- Vacina Column -->
+          <ng-container matColumnDef="vacina">
+            <th class="margin-th table-light text-dark" mat-header-cell *matHeaderCellDef mat-sort-header> <label class='lead'> Vacina </label></th>
+            <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element.vacina}} </label> </td>
+          </ng-container>
+        
+          <!-- Dosagem Column -->
+          <ng-container matColumnDef="dosagem">
+            <th class="margin-th table-light text-dark" mat-header-cell *matHeaderCellDef mat-sort-header> <label class='lead'> Dosagem(ml) </label></th>
+            <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'>{{element.dosagem}} </label></td>
+          </ng-container>
+    
+          <!-- DAta Aplicação Column -->
+          <ng-container matColumnDef="dataaplicacao">
+            <th class="margin-th table-light text-dark" mat-header-cell *matHeaderCellDef mat-sort-header> <label class='lead'> Data Aplicação </label></th>
+            <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'>{{element.dataaplicacao}} </label></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+      </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 30, 50]"
+                showFirstLastButtons 
+                aria-label="Select page of periodic elements">
+    </mat-paginator>

@@ -1,0 +1,73 @@
+table {
+    width: 100%;
+}
+
+td, th { color:white;}
+
+.margin-th {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    border: black solid 1px;
+}
+
+.margin-td {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    border: white solid 1px;
+}
+
+.pesq-form {
+    width: 100%;
+}
+
+.pesq-full-width {
+    width: 100%;
+}
+
+.iconpeso {
+    width: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.iconvacina {
+    width: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.iconbovino {
+    width: 2rem;
+    padding-bottom: 1rem;
+}
+
+.edit{
+    color: rgb(241, 241, 134)
+}
+
+.delete{
+    color: rgb(247, 126, 126);
+}
+
+.mat-acoes {
+    width: 9rem;
+}
+
+.mat-infos {
+    width: 14.5rem;
+}
+
+.mat-peso {
+    width: 7rem;
+}
+
+.mat-brinco{
+    width: 8rem;
+}
+
+.mat-lote{
+    width: 20rem;
+}
+
+
+.buttonpesquisar {
+    width: 100%;
+}

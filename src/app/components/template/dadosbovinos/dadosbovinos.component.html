@@ -12,55 +12,42 @@
                 <label for="inputPassword4"> Raça </label>
                 <input type="text" class="form-control" id="inputPassword4" placeholder="Raça">
             </div>    
-            <div class="form-group col-lg-2 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Peso </label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Peso">
-            </div>    
-            <div class="form-group col-lg-3 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Data da pesagem </label>
-                <input type="date" class="form-control" id="inputPassword4">
-            </div>    
+
         </div>
-        <div class="row py-4">
-            <p class="text-left lead"> Vacinações </p> <hr>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Escolher vacina </label>
-                <select class="form-control" id="inputEmail4" placeholder="Email">
-                    <option value="vacina"> Vacina 1 </option>
-                    <option value="vacina"> Vacina 2 </option>
-                    <option value="vacina"> Vacina 3 </option>
-                    <option value="vacina"> Vacina 4 </option>
-                </select>
-            </div>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Dosagem </label>
-                <input type="number" class="form-control" id="inputEmail4" value="0">
-            </div>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Data de Aplicação </label>
-                <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>    
+
+        <p class="text-left lead pt-4"> Pesagem </p> <hr>
+
+        <div class="row">
+            <a class="col-1" id="filldetails" (click)="addFieldsPesagem()"> <mat-icon>add</mat-icon> </a>
+            <a class="col-1" id="filldetails" (click)="removeFieldsPesagem()"> <mat-icon> remove </mat-icon> </a>
         </div>
-        <div class="row py-4">
-            <p class="text-left lead"> Lote </p> <hr>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Escolher lote </label>
-                <select class="form-control" id="inputEmail4" placeholder="Email">
-                    <option value="vacina"> Lote 1 </option>
-                    <option value="vacina"> Lote 2 </option>
-                    <option value="vacina"> Lote 3 </option>
-                    <option value="vacina"> Lote 4 </option>
-                </select>
-            </div>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Data de alocação do lote </label>
-                <input type="date" class="form-control" id="inputEmail4" value="0">
-            </div>
-            <div class="form-group col-md-4 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Data de remoção do lote </label>
-                <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>    
+
+        <div id="containerpesagem">
+
         </div>
+
+        <p class="text-left lead pt-4"> Vacinações </p> <hr>
+
+        <div class="row">
+            <a class="col-1" id="filldetails" (click)="addFieldsVacina()"> <mat-icon>add</mat-icon> </a>
+            <a class="col-1" id="filldetails" (click)="removeFieldsVacina()"> <mat-icon> remove </mat-icon> </a>
+        </div>
+        
+        <div id="containervacinas">
+
+        </div>
+
+        <p class="text-left lead pt-4"> Lote </p> <hr>
+
+        <div class="row">
+            <a class="col-1" id="filldetails" (click)="addFieldsLotes()"> <mat-icon>add</mat-icon> </a>
+            <a class="col-1" id="filldetails" (click)="removeFieldsLotes()"> <mat-icon> remove </mat-icon> </a>
+        </div>
+
+        <div id="containerlotes">
+
+        </div>
+        
         <div class="text-center pt-4">
             <button type="submit" class="btn btn-primary px-5"> Continuar </button>
         </div> 

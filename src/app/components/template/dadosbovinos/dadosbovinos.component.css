@@ -1,3 +1,7 @@
 .form {
     margin: 0 auto;
 }
+
+#filldetails {
+    cursor: pointer;
+}

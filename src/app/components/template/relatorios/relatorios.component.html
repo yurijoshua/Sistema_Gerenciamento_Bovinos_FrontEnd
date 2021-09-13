@@ -1,50 +1,14 @@
 <!-- Page content -->
 <div class="form container-fluid">
     <mat-tab-group>
-        <mat-tab label="Relatório Bovinos"> 
-            <form class="example-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Pesquisar</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </form>
-            <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-                <!-- Position Column -->
-                <ng-container matColumnDef="position">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                </ng-container>
-              
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                </ng-container>
-              
-                <!-- Weight Column -->
-                <ng-container matColumnDef="weight">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
-                  <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-                </ng-container>
-              
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="symbol">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
-                  <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-                </ng-container>
-              
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-            <mat-paginator [pageSizeOptions]="[10, 30, 50]"
-                        showFirstLastButtons 
-                        aria-label="Select page of periodic elements">
-            </mat-paginator>
-        </div>     
-    </mat-tab>
-    <mat-tab label="Relatório Lotes"> Content 2 </mat-tab>
-    <mat-tab label="Relatório Vendas"> Content 3 </mat-tab>
+        <mat-tab label="Lista Bovinos"> 
+          <app-relatoriobovino></app-relatoriobovino> 
+        </mat-tab>
+        <mat-tab label="Lista Lotes"> 
+          <app-relatoriolotes></app-relatoriolotes>
+        </mat-tab>
+        <mat-tab label="Lista Vendas">
+          <app-relatoriovendas></app-relatoriovendas>
+        </mat-tab>
     </mat-tab-group>
 </div>
