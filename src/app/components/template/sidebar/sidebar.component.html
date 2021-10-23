@@ -2,16 +2,20 @@
     <!-- Sidebar-->
     <div class="border-end bg-white main d-none d-sm-block" id="sidebar-wrapper">
         <div class="list-group-flush">
-            <a routerLink="" class="list-group-item list-group-item-action list-group-item-light p-3 tag-router" href="/"> Home Page </a>
-            <a routerLink="/dados-bovino" class="list-group-item list-group-item-action list-group-item-light p-3" href="/dados-bovino"> Registrar bovino </a>
-            <a routerLink="/registrar-venda" class="list-group-item list-group-item-action list-group-item-light p-3" href="/registrar-venda"> Registrar venda </a>
-            <a routerLink="/relatorios" class="list-group-item list-group-item-action list-group-item-light p-3" href="/relatorios"> Relatórios </a>
+            <a routerLink="" class="list-group-item list-group-item-action list-group-item-light p-3 tag-router"> Home Page </a>
+            <a routerLink="/animal/create" class="list-group-item list-group-item-action list-group-item-light p-3"> Novo bovino </a>
+            <a routerLink="/lote/create" class="list-group-item list-group-item-action list-group-item-light p-3"> Novo lote </a>
+            <a routerLink="/pasto/create" class="list-group-item list-group-item-action list-group-item-light p-3"> Novo pasto </a>
+            <a routerLink="/racao/create" class="list-group-item list-group-item-action list-group-item-light p-3"> Nova ração </a>
+            <a routerLink="/medicacao/create" class="list-group-item list-group-item-action list-group-item-light p-3"> Novo medicamento </a>
+            <a routerLink="/registrar-venda" class="list-group-item list-group-item-action list-group-item-light p-3"> Registrar venda </a>
+            <a routerLink="/relatorios" class="list-group-item list-group-item-action list-group-item-light p-3"> Relatórios </a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 dropdown-toggle tag-user" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 User
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a routerLink="/informacoes-usuario" class="dropdown-item" href="/informacoes-usuario">Informações da conta</a></li>
-                <li><a routerLink="/novo-usuario" class="dropdown-item" href="/novo-usuario">Novo Usuário</a></li>
+                <li><a routerLink="/informacoes-usuario" class="dropdown-item">Informações da conta</a></li>
+                <li><a routerLink="/novo-usuario" class="dropdown-item">Novo Usuário</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>

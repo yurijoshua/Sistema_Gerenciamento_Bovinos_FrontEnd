@@ -1,0 +1,16 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center display-5 text-decoration-underline"> Criar pasto </p>
+    <form>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados pasto </p> <hr>
+            <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Nome do pasto </label>
+                <input matInput [(ngModel)]="pasto.nomePasto" type="text"  name="nomePasto" class="form-control form-control-forms " placeholder="Nome do pasto" required>
+            </div> 
+        </div>
+        <div class="text-right pt-4">
+            <button (click)='create()' class="btn btn-primary px-5"> Criar </button>
+        </div> 
+    </form>
+</div>

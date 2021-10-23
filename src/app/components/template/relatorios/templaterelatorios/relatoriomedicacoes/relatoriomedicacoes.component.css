@@ -24,6 +24,21 @@ td, th { color:white;}
     width: 100%;
 }
 
+.iconpeso {
+    width: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.iconvacina {
+    width: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.iconbovino {
+    width: 2rem;
+    padding-bottom: 1rem;
+}
+
 .edit{
     color: rgb(241, 241, 134)
 }
@@ -33,9 +48,12 @@ td, th { color:white;}
 }
 
 .mat-acoes {
-    width: 9rem;
+    width: 15%;
 }
 
+.mat-infos {
+    width: 10%;
+}
 
 .buttonpesquisar {
     width: 100%;

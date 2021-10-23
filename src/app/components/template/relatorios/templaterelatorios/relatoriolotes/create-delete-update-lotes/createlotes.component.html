@@ -1,0 +1,16 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center display-5 text-decoration-underline"> Criar lote </p>
+    <form>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados lote </p> <hr>
+            <div class="form-group col-lg-6 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Nome do lote </label>
+                <input matInput [(ngModel)]="lote.nomeLote" type="text"  name="nomelote" class="form-control form-control-forms " placeholder="Nome do lote" required>
+            </div> 
+        </div>
+        <div class="text-right pt-4">
+            <button (click)='create()' class="btn btn-primary px-5"> Criar </button>
+        </div> 
+    </form>
+</div>

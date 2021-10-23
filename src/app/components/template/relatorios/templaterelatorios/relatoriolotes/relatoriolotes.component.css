@@ -48,25 +48,28 @@ td, th { color:white;}
 }
 
 .mat-acoes {
-    width: 9rem;
+    width: 10%;
 }
 
 .mat-infos {
-    width: 14.5rem;
+    width: 5%;
+}
+
+.mat-raca {
+    width: 32%;
 }
 
 .mat-peso {
-    width: 7rem;
+    width: 32%;
 }
 
 .mat-brinco{
-    width: 8rem;
+    width: 32.5%;
 }
 
 .mat-lote{
-    width: 20rem;
+    width: 32.5%;
 }
-
 
 .buttonpesquisar {
     width: 100%;

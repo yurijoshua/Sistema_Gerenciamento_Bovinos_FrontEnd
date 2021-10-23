@@ -1,17 +1,10 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
-
-/**
- * @title Table with pagination
- */
-
-export interface pesos {
-  id: string;
-  peso: string;
-  datapesagem: string;
-}
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Pesos } from './pesos.model';
+import { PesosService } from './pesos.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-relatoriopesos',
@@ -19,56 +12,46 @@ export interface pesos {
   styleUrls: ['./relatoriopesos.component.css']
 })
 
-export class RelatoriopesosComponent implements AfterViewInit {
+export class RelatoriopesosComponent  implements AfterViewInit {
  
-  sortedData: pesos[];
+  private id!: String;
 
-  constructor() {
-    this.sortedData = this.dataSource.data;
-  }
+  displayedColumns: string[] = ['peso','datapesagem','acoes'];
   
-  displayedColumns: string[] = ['peso','datapesagem'];
+  pesos: Pesos[] = [];
 
-  dataSource = new MatTableDataSource<pesos>(ELEMENT_PESOS);
+  constructor(private service: PesosService, private route: Router,private aroute: ActivatedRoute ) { 
+    this.dataSource = new MatTableDataSource(this.pesos);
+  }
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  dataSource: MatTableDataSource<Pesos>;
+ 
+  ngAfterViewInit() {
+    this.id = this.aroute.snapshot.paramMap.get('id')!
+    this.findAll()
+  }
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator; 
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-  Pesquisa() {    
-    var i = 1
-    var vallen = (<HTMLSelectElement>document.getElementById("pesquisa")).value;
-    this.paginator._changePageSize(9999);  
-    ELEMENT_PESOS.forEach(element => {
-        var datapesagem = element.datapesagem.toLowerCase();
-          if(vallen.length >=1)
-          {
-            if(datapesagem.indexOf(vallen.toLowerCase(), 0)!=0)
-            {
-              (<HTMLElement>document.querySelector("#tabela > tbody > tr:nth-child("+i+")")).classList.add('d-none');
-            }
-            else
-            {
-              (<HTMLElement>document.querySelector("#tabela > tbody > tr:nth-child("+i+")")).classList.remove('d-none');
-            }
-          }
-          else
-          {
-            (<HTMLElement>document.querySelector("#tabela > tbody > tr:nth-child("+i+")")).classList.remove('d-none');
-            this.paginator._changePageSize(10);  
-          }
-        i++
-    });
+  findAll() {
+    this.service.findAll(this.id).subscribe(resposta => {
+      this.dataSource = new MatTableDataSource(resposta);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
   }
 
-
+  navegarParaCadastroPeso(): void {
+    this.route.navigate([`peso/create/${window.location.pathname.split('/')[3]}`])
+  }
 }
-
-const ELEMENT_PESOS: pesos[] = [
-  {id: '1', peso: '100', datapesagem: '12/12/2021'},
-];
