@@ -1,0 +1,29 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center display-5 text-decoration-underline text-break"> Alterar venda de lote </p>
+    <form>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados venda </p> <hr>
+            <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Valor da arroba </label>
+                <input matInput [(ngModel)]="venda.valorArroba" type="text"  name="valorArroba" class="form-control form-control-forms " placeholder="Ingredientes" required>
+            </div>
+            <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Data da venda </label>
+                <input matInput [(ngModel)]="venda.dataVenda" type="text"  name="dataVenda" class="form-control form-control-forms " placeholder="Ingredientes" required>
+            </div> 
+            <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Peso </label>
+                <input matInput [(ngModel)]="venda.valorLote" type="text"  name="valorLote" class="form-control form-control-forms " placeholder="Ingredientes" required>
+            </div> 
+            <div class="form-group col-lg-12 pt-3 pt-lg-1">
+                <label for="inputEmail4"> Registro do comprador </label>
+                <input matInput [(ngModel)]="venda.registroComprador" type="text"  name="registroComprador" class="form-control form-control-forms " placeholder="Ingredientes" required>
+            </div>  
+        </div>
+        <div class="text-right pt-4">
+            <button (click)='update()' class="btn btn-primary px-5 col-lg-6"> Alterar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6"> Cancelar </button>
+        </div> 
+    </form>
+</div>

@@ -46,28 +46,3 @@ td, th { color:white;}
 .delete{
     color: rgb(247, 126, 126);
 }
-
-.mat-acoes {
-    width: 9rem;
-}
-
-.mat-infos {
-    width: 14.5rem;
-}
-
-.mat-peso {
-    width: 7rem;
-}
-
-.mat-brinco{
-    width: 8rem;
-}
-
-.mat-lote{
-    width: 20rem;
-}
-
-
-.buttonpesquisar {
-    width: 100%;
-}

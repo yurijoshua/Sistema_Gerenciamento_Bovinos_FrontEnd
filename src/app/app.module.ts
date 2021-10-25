@@ -10,7 +10,6 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CreatebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/createbovinos.component';
 import { RelatoriosComponent } from './components/template/relatorios/relatorios.component';
-import { RegistrarvendaComponent } from './components/template/registrarvenda/registrarvenda.component';
 import { InformacoesusuarioComponent } from './components/template/informacoesusuario/informacoesusuario.component';
 import { FormusuarioComponent } from './components/template/formusuario/formusuario.component';
 import { RelatoriobovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriobovino.component';
@@ -53,6 +52,9 @@ import { UpdatepastoComponent } from './components/template/relatorios/templater
 import { CreateracoesComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/create-delete-update-racoes/createracoes.component';
 import { DeleteracoesComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/create-delete-update-racoes/deleteracoes.component';
 import { UpdateracoesComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/create-delete-update-racoes/updateracoes.component';
+import { UpdatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/updatevendas.component';
+import { CreatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/createvendas.component';
+import { DeletevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/deletevendas.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,6 @@ import { UpdateracoesComponent } from './components/template/relatorios/template
     CreatebovinosComponent,
     DeletebovinosComponent,
     RelatoriosComponent,
-    RegistrarvendaComponent,
     InformacoesusuarioComponent,
     FormusuarioComponent,
     RelatoriobovinoComponent,
@@ -92,7 +93,10 @@ import { UpdateracoesComponent } from './components/template/relatorios/template
     UpdatepastoComponent,
     UpdateracoesComponent,
     CreateracoesComponent,
-    DeleteracoesComponent
+    DeleteracoesComponent,
+    CreatevendasComponent,
+    DeletevendasComponent,
+    UpdatevendasComponent
   ],
   imports: [
     BrowserModule,

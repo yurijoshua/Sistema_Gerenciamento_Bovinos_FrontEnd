@@ -4,7 +4,6 @@ import { CreatebovinosComponent } from './components/template/relatorios/templat
 import { FormusuarioComponent } from './components/template/formusuario/formusuario.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { InformacoesusuarioComponent } from './components/template/informacoesusuario/informacoesusuario.component';
-import { RegistrarvendaComponent } from './components/template/registrarvenda/registrarvenda.component';
 import { RelatoriosComponent } from './components/template/relatorios/relatorios.component';
 import { RelatoriolotesbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriolotes/relatoriolotesbovinos.component';
 import { RelatoriopesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/relatoriopesos.component';
@@ -25,6 +24,9 @@ import { UpdateracoesComponent } from './components/template/relatorios/template
 import { CreatepastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/create-delete-update-pastos/createpasto.component';
 import { DeletepastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/create-delete-update-pastos/deletepasto.component';
 import { UpdatepastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/create-delete-update-pastos/updatepasto.component';
+import { CreatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/createvendas.component';
+import { DeletevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/deletevendas.component';
+import { UpdatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/updatevendas.component';
 
 const routes: Routes = [
   {
@@ -58,10 +60,6 @@ const routes: Routes = [
   {
     path: 'peso/delete/:id',
     component: DeletepesosComponent
-  },
-  {
-    path: 'registrar-venda',
-    component: RegistrarvendaComponent
   },
   {
     path: 'relatorios',
@@ -126,6 +124,18 @@ const routes: Routes = [
   {
     path: 'pasto/update/:id',
     component: UpdatepastoComponent
+  },
+  {
+    path: 'venda/create',
+    component: CreatevendasComponent
+  },
+  {
+    path: 'venda/delete/:id',
+    component: DeletevendasComponent
+  },
+  {
+    path: 'venda/update/:id',
+    component: UpdatevendasComponent
   }
 ];
 
