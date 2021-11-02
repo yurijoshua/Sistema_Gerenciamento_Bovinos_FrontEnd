@@ -15,7 +15,9 @@ export class UpdatebovinosComponent implements OnInit {
   bovino: Bovinos = {
     id: '',
     brinco: '',
-    raca: ''
+    raca: '',
+    dataCriacao: '',
+    dataSaida: ''
   }
 
   ngOnInit(): void {
@@ -25,8 +27,10 @@ export class UpdatebovinosComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.bovino.id!).subscribe((resposta) => {
-      this.bovino.raca = resposta.brinco
-      this.bovino.brinco = resposta.raca
+      this.bovino.brinco = resposta.brinco
+      this.bovino.raca = resposta.raca
+      this.bovino.dataCriacao = resposta.dataCriacao
+      this.bovino.dataSaida = resposta.dataSaida
     })
   }
 
@@ -42,4 +46,17 @@ export class UpdatebovinosComponent implements OnInit {
   cancel(): void {
     this.route.navigate([`relatorios`])
   }
+
+  onkey(event: any) {
+    if(event.target.name == "dataCriacao")
+    {
+      this.bovino.dataCriacao = event.target.value
+    }
+    else
+    {
+      this.bovino.dataSaida = event.target.value
+    }
+  }
+
 }
+

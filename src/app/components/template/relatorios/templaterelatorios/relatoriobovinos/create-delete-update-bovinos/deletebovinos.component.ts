@@ -15,7 +15,9 @@ export class DeletebovinosComponent implements OnInit {
   bovino: Bovinos = {
     id: '',
     brinco: '',
-    raca: ''
+    raca: '',
+    dataCriacao: '',
+    dataSaida: ''
   }
 
   ngOnInit(): void {
@@ -25,8 +27,10 @@ export class DeletebovinosComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.bovino.id!).subscribe((resposta) => {
-      this.bovino.raca = resposta.brinco
-      this.bovino.brinco = resposta.raca
+      this.bovino.brinco = resposta.brinco
+      this.bovino.raca = resposta.raca
+      this.bovino.dataCriacao = resposta.dataCriacao
+      this.bovino.dataSaida = resposta.dataSaida
     })
   }
 

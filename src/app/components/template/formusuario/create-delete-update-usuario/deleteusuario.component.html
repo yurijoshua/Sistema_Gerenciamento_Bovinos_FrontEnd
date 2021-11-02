@@ -1,0 +1,25 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center text-break display-5 text-decoration-underline">Cadastrar novo usuário</p>
+    <form>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados usuario</p> <hr>
+            <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <label> Nome completo* </label>
+                <input matInput [(ngModel)]="usuario.nome" type="text" class="form-control-forms"  name="nome" placeholder="Sobrenome" required>            
+            </div>    
+            <div class="form-group col-lg-3 pt-3 pt-lg-1">
+                <label> Usuário* </label>
+                <input matInput [(ngModel)]="usuario.usuario" type="text" class="form-control-forms"  name="usuario" placeholder="Usuário" required>  
+            </div>    
+            <div class="form-group col-lg-2 pt-3 pt-lg-1">
+                <label> Senha* </label>
+                <input matInput [(ngModel)]="usuario.senha" type="text" class="form-control-forms"  name="senha" required>  
+            </div>    
+        </div>
+        <div class="text-center pt-4">
+            <button (click)='delete()' class="btn btn-primary px-5 col-lg-6 col-12"> Deletar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6 col-12"> Cancelar </button>  
+        </div> 
+    </form>
+</div>

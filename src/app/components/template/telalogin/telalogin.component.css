@@ -29,10 +29,6 @@ html {
     color: #cccccc;
   }
   
-  
-  
-  /* STRUCTURE */
-  
   .wrapper {
     display: flex;
     align-items: center;

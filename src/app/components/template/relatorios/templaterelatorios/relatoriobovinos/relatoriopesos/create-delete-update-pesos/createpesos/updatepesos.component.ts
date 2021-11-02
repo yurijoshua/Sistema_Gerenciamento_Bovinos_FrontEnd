@@ -51,4 +51,8 @@ export class UpdatepesosComponent implements OnInit {
     }
   }
 
+  onkey(event: any) {
+      this.peso.dataPesagem = event.target.value
+  }
+
 }

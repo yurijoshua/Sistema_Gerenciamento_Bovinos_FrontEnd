@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Lotes } from '../relatoriolotes/lotes.model';
 import { Racoes } from './racoes.model';
 
 @Injectable({
@@ -18,23 +19,28 @@ export class RacoesService {
     return this.http.get<Racoes[]>(url);
   }
 
+  findallracoesbovino(id: String):Observable<Lotes[]> {
+    const url = `${this.baseUrl}statusracaoandlote/findallbyracao?racao=${id}`
+    return this.http.get<Lotes[]>(url);
+  }
+
   findById(id: String):Observable<Racoes> {
     const url = `${this.baseUrl}racao/${id}`
     return this.http.get<Racoes>(url);
   }
 
   create(racao: Racoes): Observable<Racoes>{
-    const url = `${this.baseUrl}racao/create`
+    const url = `${this.baseUrl}racao`
     return this.http.post<Racoes>(url, racao)
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}racao/delete/${id}`
+    const url = `${this.baseUrl}racao/${id}`
     return this.http.delete<void>(url)
   }
 
   update(racao: Racoes):Observable<void> {
-    const url = `${this.baseUrl}racao/update/${racao.id}`
+    const url = `${this.baseUrl}racao/${racao.id}`
     return this.http.put<void>(url, racao)
   }
 

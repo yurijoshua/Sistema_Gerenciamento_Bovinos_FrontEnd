@@ -1,21 +1,21 @@
 <!-- Page content-->
 <div class="form container-fluid">
     <p class="text-center display-5 text-decoration-underline">Deletar lote</p>
-    <form>
+    <form class="was-validated" novalidate>
         <div class="row py-4">
             <p class="text-left lead"> Dados lote</p> <hr>
             <div class="form-group col-lg-6 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Nome do lote </label>
-                <input matInput [(ngModel)]="lote.nomeLote" type="text"  name="nomelote" class="form-control form-control-forms" disabled>
+                <label for="inputEmail4"> Nome do lote* </label>
+                <input matInput [(ngModel)]="lote.nomeLote" type="text"  name="nomelote" class="form-control-forms" disabled>
             </div>
             <div class="form-group col-lg-6 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Data Criacao </label>
-                <input matInput [(ngModel)]="lote.dataCriacao"  type="text"  name="datacriacao" class="form-control form-control-forms" disabled>
+                <label for="inputPassword4"> Data Criacao (dia/mês/ano) </label>
+                <input matInput [(ngModel)]="lote.dataCriacao"  mask="00/00/0000"  maxlength="10" type="text" name="datacriacao" class="form-control-forms" disabled>
             </div>    
         </div>
         <div class="text-center pt-4 row">
-            <button (click)='delete()' class="btn btn-primary px-5 col-lg-6"> Deletar </button>
-            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6"> Cancelar </button>
+            <button (click)='delete()' class="btn btn-primary px-5 col-lg-6 col-12"> Deletar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6 col-12"> Cancelar </button>
         </div> 
     </form>
 </div>

@@ -1,24 +1,33 @@
 <!-- Page content-->
 <div class="form container-fluid">
     <p class="text-center display-5 text-decoration-underline"> Criar medicação </p>
-    <form>
+    <form class="was-validated" novalidate>
         <div class="row py-4">
             <p class="text-left lead"> Dados medicação </p> <hr>
             <div class="form-group col-lg-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Produto </label>
-                <input matInput [(ngModel)]="medicacao.produtoUtilizado" type="text"  name="produtoUtilizado" class="form-control form-control-forms " placeholder="Produto" required>
+                <label for="inputEmail4"> Medicamento* </label>
+                <input matInput [(ngModel)]="medicacao.produtoUtilizado" type="text"  name="produtoUtilizado" class="form-control-forms " placeholder="Produto" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
             </div> 
             <div class="form-group col-lg-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Periodicidade </label>
-                <input matInput [(ngModel)]="medicacao.periodicidade" type="text"  name="periodicidade" class="form-control form-control-forms " placeholder="Periodicidade" required>
+                <label for="inputEmail4"> Periodicidade* </label>
+                <input matInput [(ngModel)]="medicacao.periodicidade" type="text"  name="periodicidade" class="form-control-forms " placeholder="Periodicidade" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
             </div>
             <div class="form-group col-lg-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Lote da medicação </label>
-                <input matInput [(ngModel)]="medicacao.loteMedicacao" type="text"  name="loteMedicacao" class="form-control form-control-forms " placeholder="Lote da medicação" required>
+                <label for="inputEmail4"> Lote da medicação* </label>
+                <input matInput [(ngModel)]="medicacao.loteMedicacao" type="text"  name="loteMedicacao" class="form-control-forms " placeholder="Lote da medicação" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
             </div>
         </div>
         <div class="text-right pt-4">
-            <button (click)='create()' class="btn btn-primary px-5"> Criar </button>
+            <button (click)='create()' class="btn btn-primary px-5 col-lg-2 col-12"> Criar </button>
         </div> 
     </form>
 </div>

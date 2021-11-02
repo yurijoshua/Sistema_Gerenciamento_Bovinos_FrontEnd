@@ -13,7 +13,14 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
-    border: 1px solid #ced4da;
+    border: 1px solid;
     border-radius: .25rem;
+}
+
+.form-control-forms.is-valid, .was-validated .form-control-forms:valid {
+    border-color: #198754;
+}
+
+.form-control-forms.is-invalid, .was-validated .form-control-forms:invalid {
+    border-color: #dc3545;
 }

@@ -13,10 +13,10 @@ export class UpdatevendasComponent implements OnInit {
   constructor(private service: VendasService, private route: Router, private aroute: ActivatedRoute) { }
 
   venda: Vendas = {
-    valorArroba: '',
+    valorArroba: 0,
     dataVenda: '',
     registroComprador: '',
-    valorLote: ''
+    valorLote: 0
   }
 
   ngOnInit(): void {
@@ -44,6 +44,10 @@ export class UpdatevendasComponent implements OnInit {
 
   cancel(): void {
     this.route.navigate([`relatorios`])
+  }
+
+  onkey(event: any) {
+    this.venda.dataVenda = event.target.value
   }
 
 }

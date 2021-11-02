@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+}
+
+td, th { color:white;}
+
+.margin-th {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    border: black solid 1px;
+}
+
+.margin-td {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    border: white solid 1px;
+}
+
+.pesq-form {
+    width: 100%;
+}
+
+.pesq-full-width {
+    width: 100%;
+}
+
+
+.mat-brinco{
+    width: 8rem;
+}
+
+
+.buttonpesquisar {
+    width: 100%;
+}

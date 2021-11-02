@@ -30,6 +30,8 @@ export class CreatepesosComponent implements OnInit {
       this.service.create(this.peso,this.id).subscribe((resposta) => {
         this.route.navigate([`peso/animal/${this.id}`])
         this.service.mensagem(`Realizdao o cadastro do peso com êxito!`)
+      }, err => {
+        this.service.mensagem(err.error.message) 
       })
     }
     else
@@ -48,6 +50,10 @@ export class CreatepesosComponent implements OnInit {
     {
       this.service.mensagem(`O peso não pode ser menor ou igual a zero!`)
     }
+  }
+
+  onkey(event: any) {
+    this.peso.dataPesagem = event.target.value
   }
 
 }

@@ -24,6 +24,9 @@ export class CreatelotesComponent implements OnInit {
   create(): void {
     if(this.lote.nomeLote != '')
     {   
+      const d = new Date();
+      let data =  String (d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear());
+      this.lote.dataCriacao = data;
       this.service.create(this.lote).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
         this.service.mensagem('Lote criado com sucesso!');

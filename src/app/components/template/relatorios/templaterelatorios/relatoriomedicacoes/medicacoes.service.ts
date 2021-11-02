@@ -24,17 +24,17 @@ export class MedicacoesService {
   }
 
   create(medicacao: Medicacoes): Observable<Medicacoes>{
-    const url = `${this.baseUrl}medicacao/create`
+    const url = `${this.baseUrl}medicacao`
     return this.http.post<Medicacoes>(url, medicacao)
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}medicacao/delete/${id}`
+    const url = `${this.baseUrl}medicacao/${id}`
     return this.http.delete<void>(url)
   }
 
   update(medicacao: Medicacoes):Observable<void> {
-    const url = `${this.baseUrl}medicacao/update/${medicacao.id}`
+    const url = `${this.baseUrl}medicacao/${medicacao.id}`
     return this.http.put<void>(url, medicacao)
   }
 

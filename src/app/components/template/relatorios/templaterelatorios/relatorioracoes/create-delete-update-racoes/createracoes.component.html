@@ -1,16 +1,19 @@
 <!-- Page content-->
 <div class="form container-fluid">
     <p class="text-center display-5 text-decoration-underline"> Criar ração </p>
-    <form>
+    <form class="was-validated" novalidate>
         <div class="row py-4">
             <p class="text-left lead"> Dados ração </p> <hr>
             <div class="form-group col-lg-4 pt-3 pt-lg-1">
-                <label for="inputEmail4"> ingredientes </label>
-                <input matInput [(ngModel)]="racao.ingredientes" type="text"  name="ingredientes" class="form-control form-control-forms " placeholder="Ingrediente" required>
+                <label for="inputEmail4"> Ingredientes* </label>
+                <input matInput [(ngModel)]="racao.ingredientes" type="text"  name="ingredientes" class="form-control-forms " placeholder="Ingrediente" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
             </div> 
         </div>
         <div class="text-right pt-4">
-            <button (click)='create()' class="btn btn-primary px-5"> Criar </button>
+            <button (click)='create()' class="btn btn-primary px-5 col-lg-2 col-12"> Criar </button>
         </div> 
     </form>
 </div>

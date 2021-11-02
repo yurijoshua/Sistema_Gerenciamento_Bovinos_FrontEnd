@@ -1,0 +1,37 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center display-5 text-decoration-underline"> Medicação do bovino </p>
+    <form class="was-validated" novalidate>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados medicação do bovino  </p> <hr>
+            <div class="row"> 
+                <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
+                    <label> Dosagem* (ml) </label> 
+                    <input matInput [(ngModel)]="medbov.dosagem" type="text" name="peso" class="form-control-forms" placeholder="Dosagem" required> 
+                    <div class="invalid-feedback">
+                        Preencha o campo acima.
+                    </div>
+                </div> 
+                <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
+                    <label> Data de aplicação* (dia/mês/ano) </label> 
+                    <input matInput [(ngModel)]="medbov.dataAplicacao" mask="00/00/0000"  maxlength="10" type="text" name="dataPesagem" class="form-control-forms" placeholder="00/00/0000" required> 
+                    <div class="invalid-feedback">
+                        Preencha o campo acima.
+                    </div>
+                </div>
+                <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                    <mat-form-field class="w-100">
+                    <mat-label>Medicações</mat-label>
+                    <mat-select (selectionChange)="changeClient($event.value)" required>
+                        <mat-option *ngFor="let state of states" [value]="state.id">{{state.produtoUtilizado}} | {{state.loteMedicacao}}</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>   
+        </div>
+        <div class="text-center pt-4">
+            <button (click)='create()' class="btn btn-primary px-5 col-lg-6 col-12"> Continuar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6 col-12"> Cancelar </button>
+        </div> 
+    </form>
+</div>

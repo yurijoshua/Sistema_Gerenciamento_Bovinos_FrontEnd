@@ -41,7 +41,6 @@ export class RelatorioracoesComponent implements AfterViewInit {
   findAll() {
     this.service.findAll().subscribe(resposta => {
       this.dataSource = new MatTableDataSource(resposta);
-      console.log(resposta)
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })

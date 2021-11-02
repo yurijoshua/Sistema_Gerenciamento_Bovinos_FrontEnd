@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Racoes } from '../relatorioracoes/racoes.model';
 import { Vendas } from './vendas.model';
 
 @Injectable({
@@ -26,17 +25,17 @@ export class VendasService {
   }
 
   create(venda: Vendas): Observable<Vendas>{
-    const url = `${this.baseUrl}venda/create/1`
+    const url = `${this.baseUrl}venda?usuario=1`
     return this.http.post<Vendas>(url, venda)
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}venda/delete/${id}`
+    const url = `${this.baseUrl}venda/${id}`
     return this.http.delete<void>(url)
   }
 
   update(racao: Vendas):Observable<void> {
-    const url = `${this.baseUrl}venda/update/${racao.id}`
+    const url = `${this.baseUrl}venda/${racao.id}`
     return this.http.put<void>(url, racao)
   }
 

@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/createbovinos.component';
-import { FormusuarioComponent } from './components/template/formusuario/formusuario.component';
 import { HomeComponent } from './components/template/home/home.component';
-import { InformacoesusuarioComponent } from './components/template/informacoesusuario/informacoesusuario.component';
 import { RelatoriosComponent } from './components/template/relatorios/relatorios.component';
-import { RelatoriolotesbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriolotes/relatoriolotesbovinos.component';
 import { RelatoriopesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/relatoriopesos.component';
 import { DeletebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/deletebovinos.component';
 import { CreatepesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/create-delete-update-pesos/createpesos/createpesos.component';
@@ -27,6 +24,17 @@ import { UpdatepastoComponent } from './components/template/relatorios/templater
 import { CreatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/createvendas.component';
 import { DeletevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/deletevendas.component';
 import { UpdatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/updatevendas.component';
+import { CreateusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/createusuario.component';
+import { HistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/histmedicbovino.component';
+import { HistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/histlotebovino.component';
+import { DeletehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/deletehistlotebovino.component';
+import { UpdatehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/updatehistlotebovino.component';
+import { CreatehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/createhistlotebovino.component';
+import { CreatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/createhistmedicbovino.component';
+import { DeletehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/deletehistmedicbovino.component';
+import { UpdatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/updatehistmedicbovino.component';
+import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
+import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
 
 const routes: Routes = [
   {
@@ -50,6 +58,10 @@ const routes: Routes = [
     component: UpdatelotesComponent
   },
   {
+    path: 'lote/bovinos/:id',
+    component: BovinosbyloteComponent
+  },
+  {
     path: 'peso/create/:id',
     component: CreatepesosComponent
   },
@@ -66,20 +78,44 @@ const routes: Routes = [
     component: RelatoriosComponent
   },
   {
-    path: 'informacoes-usuario',
-    component: InformacoesusuarioComponent
-  },
-  {
-    path: 'novo-usuario',
-    component: FormusuarioComponent
+    path: 'usuario/create',
+    component: CreateusuarioComponent
   },
   {
     path: 'peso/animal/:id',
     component: RelatoriopesosComponent
   },
   {
-    path: 'lote-bovino/:id',
-    component: RelatoriolotesbovinoComponent
+    path: 'bovino/lote/:id',
+    component: HistlotebovinoComponent
+  },
+  {
+    path: 'bovino/lote/create/:id',
+    component: CreatehistlotebovinoComponent
+  },
+  {
+    path: 'bovino/lote/update/:id',
+    component: UpdatehistlotebovinoComponent
+  },
+  {
+    path: 'bovino/lote/delete/:id',
+    component: DeletehistlotebovinoComponent
+  },
+  {
+    path: 'bovino/medicacao/:id',
+    component: HistmedicbovinoComponent
+  },
+  {
+    path: 'bovino/medicacao/create/:id',
+    component: CreatehistmedicbovinoComponent
+  },
+  {
+    path: 'bovino/medicacao/update/:id',
+    component: UpdatehistmedicbovinoComponent
+  },
+  {
+    path: 'bovino/medicacao/delete/:id',
+    component: DeletehistmedicbovinoComponent
   },
   {
     path: 'animal/update/:id',
@@ -112,6 +148,10 @@ const routes: Routes = [
   {
     path: 'racao/update/:id',
     component: UpdateracoesComponent
+  },
+  {
+    path: 'racao/bovinos/:id',
+    component: LotesbyracaoComponent
   },
   {
     path: 'pasto/create',

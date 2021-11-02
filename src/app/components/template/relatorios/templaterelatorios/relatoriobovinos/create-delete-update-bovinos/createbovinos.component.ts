@@ -15,7 +15,9 @@ export class CreatebovinosComponent implements OnInit {
 
   bovino: Bovinos = {
     brinco: '',
-    raca: ''
+    raca: '',
+    dataCriacao: '',
+    dataSaida: ''
   }
 
   ngOnInit(): void   {
@@ -23,11 +25,13 @@ export class CreatebovinosComponent implements OnInit {
   }
 
   create(): void {
-    if(this.bovino.brinco != '' && this.bovino.raca != '')
-    {   
+    if(this.bovino.brinco != '' && this.bovino.raca != '' && this.bovino.dataCriacao != '')
+    {  
       this.service.create(this.bovino).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
-        this.service.mensagem('Bovino criada com sucesso!');
+        this.service.mensagem('Bovino criado com sucesso!');
+      }, err => {
+        this.service.mensagem(err.error.message)  
       })
     }
     else
@@ -35,4 +39,9 @@ export class CreatebovinosComponent implements OnInit {
       this.service.mensagem('Preencha todos os campos!')
     }
   }
+
+  onkey(event: any) {
+    this.bovino.dataCriacao = event.target.value
+  }
+
 }

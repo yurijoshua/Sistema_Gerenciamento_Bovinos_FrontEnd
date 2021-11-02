@@ -25,17 +25,17 @@ export class BovinosService {
   }
 
   create(bovino: Bovinos): Observable<Bovinos>{
-    const url = `${this.baseUrl}animal/create`
+    const url = `${this.baseUrl}animal`
     return this.http.post<Bovinos>(url, bovino)
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}animal/delete/${id}`
+    const url = `${this.baseUrl}animal/${id}`
     return this.http.delete<void>(url)
   }
 
   update(bovino: Bovinos):Observable<void> {
-    const url = `${this.baseUrl}animal/update/${bovino.id}`
+    const url = `${this.baseUrl}animal/${bovino.id}`
     return this.http.put<void>(url, bovino)
   }
 

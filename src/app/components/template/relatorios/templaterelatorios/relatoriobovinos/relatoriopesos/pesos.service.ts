@@ -16,13 +16,13 @@ export class PesosService {
   constructor(private http: HttpClient, private snack: MatSnackBar) { }
 
   findAll(id: String):Observable<Pesos[]> {
-    const url = `${this.baseUrl}peso/animal/${id}`
+    const url = `${this.baseUrl}peso?animal=${id}`
     console.log(url)
     return this.http.get<Pesos[]>(url);
   }
 
   create(peso: Pesos, id: String): Observable<Pesos>{
-    const url = `${this.baseUrl}peso/create/${id}`
+    const url = `${this.baseUrl}peso?animal=${id}`
     return this.http.post<Pesos>(url, peso)
   }
 
@@ -32,12 +32,12 @@ export class PesosService {
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}peso/delete/${id}`
+    const url = `${this.baseUrl}peso/${id}`
     return this.http.delete<void>(url)
   }
 
   update(peso: Pesos):Observable<void> {
-    const url = `${this.baseUrl}peso/update/${peso.id}`
+    const url = `${this.baseUrl}peso/${peso.id}`
     return this.http.put<void>(url, peso)
   }
 

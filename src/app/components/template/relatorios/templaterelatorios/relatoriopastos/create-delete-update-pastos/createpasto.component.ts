@@ -24,6 +24,7 @@ export class CreatepastoComponent implements OnInit {
   create(): void {
     if(this.pasto.nomePasto != '')
     {   
+      this.pasto.dataCriacao = "29/10/2021"
       this.service.create(this.pasto).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
         this.service.mensagem('Pasto criado com sucesso!');

@@ -13,10 +13,10 @@ export class DeletevendasComponent implements OnInit {
   constructor(private service: VendasService, private route: Router, private aroute: ActivatedRoute) { }
 
   venda: Vendas = {
-    valorArroba: '',
+    valorArroba: 0,
     dataVenda: '',
     registroComprador: '',
-    valorLote: ''
+    valorLote: 0
   }
 
   ngOnInit(): void {
@@ -26,7 +26,6 @@ export class DeletevendasComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.venda.id!).subscribe((resposta) => {
-      console.log(resposta)
       this.venda.valorArroba = resposta.valorArroba
       this.venda.dataVenda = resposta.dataVenda
       this.venda.registroComprador = resposta.registroComprador

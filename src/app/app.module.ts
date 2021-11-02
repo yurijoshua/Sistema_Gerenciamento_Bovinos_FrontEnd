@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
@@ -10,12 +12,9 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CreatebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/createbovinos.component';
 import { RelatoriosComponent } from './components/template/relatorios/relatorios.component';
-import { InformacoesusuarioComponent } from './components/template/informacoesusuario/informacoesusuario.component';
-import { FormusuarioComponent } from './components/template/formusuario/formusuario.component';
 import { RelatoriobovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriobovino.component';
 import { RelatoriovendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/relatoriovendas.component';
 import { RelatoriopesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/relatoriopesos.component';
-import { RelatoriolotesbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriolotes/relatoriolotesbovinos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +31,7 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { DeletebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/deletebovinos.component';
 import { CreatepesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/create-delete-update-pesos/createpesos/createpesos.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { DeletepesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/create-delete-update-pesos/createpesos/deletepesos.component';
 import { UpdatebovinosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/create-delete-update-bovinos/updatebovinos.component';
 import { UpdatepesosComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/relatoriopesos/create-delete-update-pesos/createpesos/updatepesos.component';
@@ -55,6 +54,20 @@ import { UpdateracoesComponent } from './components/template/relatorios/template
 import { UpdatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/updatevendas.component';
 import { CreatevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/createvendas.component';
 import { DeletevendasComponent } from './components/template/relatorios/templaterelatorios/relatoriovendas/create-delete-update-vendas/deletevendas.component';
+import { UpdateusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/updateusuario.component';
+import { CreateusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/createusuario.component';
+import { DeleteusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/deleteusuario.component';
+import { HistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/histmedicbovino.component';
+import { HistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/histlotebovino.component';
+import { CreatehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/createhistlotebovino.component';
+import { DeletehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/deletehistlotebovino.component';
+import { UpdatehistlotebovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histlotebovino/cretate-delete-update-histlotebovino/updatehistlotebovino.component';
+import { CreatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/createhistmedicbovino.component';
+import { DeletehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/deletehistmedicbovino.component';
+import { UpdatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/updatehistmedicbovino.component';
+import {MatSelectModule} from '@angular/material/select';
+import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
+import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
 
 @NgModule({
   declarations: [
@@ -68,12 +81,9 @@ import { DeletevendasComponent } from './components/template/relatorios/template
     CreatebovinosComponent,
     DeletebovinosComponent,
     RelatoriosComponent,
-    InformacoesusuarioComponent,
-    FormusuarioComponent,
     RelatoriobovinoComponent,
     RelatoriovendasComponent,
     RelatoriopesosComponent,
-    RelatoriolotesbovinoComponent,
     CreatepesosComponent,
     DeletepesosComponent,
     UpdatebovinosComponent,
@@ -96,7 +106,20 @@ import { DeletevendasComponent } from './components/template/relatorios/template
     DeleteracoesComponent,
     CreatevendasComponent,
     DeletevendasComponent,
-    UpdatevendasComponent
+    UpdatevendasComponent,
+    CreateusuarioComponent,
+    DeleteusuarioComponent,
+    UpdateusuarioComponent,
+    HistmedicbovinoComponent,
+    HistlotebovinoComponent,
+    CreatehistmedicbovinoComponent,
+    DeletehistmedicbovinoComponent,
+    UpdatehistmedicbovinoComponent,
+    UpdatehistlotebovinoComponent,
+    CreatehistlotebovinoComponent,
+    DeletehistlotebovinoComponent,
+    BovinosbyloteComponent,
+    LotesbyracaoComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +137,11 @@ import { DeletevendasComponent } from './components/template/relatorios/template
     MatFormFieldModule,
     HttpClientModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
+    NgxMaskModule.forRoot(),
+    NgbModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

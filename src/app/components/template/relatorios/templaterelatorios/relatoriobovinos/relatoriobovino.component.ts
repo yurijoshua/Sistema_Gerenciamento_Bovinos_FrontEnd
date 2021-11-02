@@ -13,7 +13,7 @@ import { Bovinos } from './bovinos.model';
 
 export class RelatoriobovinoComponent implements AfterViewInit {
  
-  displayedColumns: string[] = ['brinco', 'raca','info','acoes'];
+  displayedColumns: string[] = ['brinco', 'raca', 'dataCriacao', 'dataSaida','info','acoes'];
   
   bovinos: Bovinos[] = [];
 

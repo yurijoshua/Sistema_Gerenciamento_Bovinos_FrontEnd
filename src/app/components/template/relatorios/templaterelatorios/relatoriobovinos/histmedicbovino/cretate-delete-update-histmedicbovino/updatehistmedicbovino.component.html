@@ -1,0 +1,29 @@
+<!-- Page content-->
+<div class="form container-fluid">
+    <p class="text-center display-5 text-decoration-underline"> Alterar medicação do bovino </p>
+    <form class="was-validated" novalidate>
+        <div class="row py-4">
+            <p class="text-left lead"> Dados medicação do bovino  </p> <hr>
+            <div class="row"> 
+                <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
+                    <label> Dosagem* (ml) </label> 
+                    <input matInput [(ngModel)]="medbov.dosagem" type="text" name="peso" class="form-control-forms" placeholder="Dosagem" required> 
+                    <div class="invalid-feedback">
+                        Preencha o campo acima.
+                    </div>
+                </div> 
+                <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
+                    <label> Data de aplicação* (dia/mês/ano) </label> 
+                    <input matInput [(ngModel)]="medbov.dataAplicacao" mask="00/00/0000"  maxlength="10" type="text" name="dataPesagem" class="form-control-forms" placeholder="00/00/0000" required> 
+                    <div class="invalid-feedback">
+                        Preencha o campo acima.
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="pt-4">
+            <button (click)='update()' class="btn btn-primary px-5 col-lg-6 col-12"> Alterar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6 col-12"> Cancelar </button>
+        </div> 
+    </form>
+</div>

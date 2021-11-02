@@ -1,21 +1,41 @@
 <!-- Page content-->
 <div class="form container-fluid">
     <p class="text-center display-5 text-decoration-underline">Alterar Bovino</p>
-    <form>
+    <form class="was-validated" novalidate>
         <div class="row py-4">
-            <p class="text-left lead"> Dados Bovino</p> <hr>
-            <div class="form-group col-lg-6 pt-3 pt-lg-1">
-                <label for="inputEmail4"> Brinco </label>
-                <input matInput [(ngModel)]="bovino.brinco" type="text"  name="brinco" class="form-control form-control-forms " placeholder="Brinco" required>
+            <p class="lead"> Dados Bovino</p> <hr>
+            <div class="form-group col-lg-6 col-12 pt-3 pt-lg-1">
+                <label> Brinco* </label>
+                <input matInput [(ngModel)]="bovino.brinco" type="text"  name="brinco" class="form-control-forms" placeholder="Brinco" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
             </div>
-            <div class="form-group col-lg-6 pt-3 pt-lg-1">
-                <label for="inputPassword4"> Raça </label>
-                <input matInput [(ngModel)]="bovino.raca"  type="text"  name="raca" class="form-control form-control-forms" placeholder="Raça" required>
-            </div>    
+            <div class="form-group col-lg-6 col-12 pt-3 pt-lg-1">
+                <label> Raça* </label>
+                <input matInput [(ngModel)]="bovino.raca"  type="text"  name="raca" class="form-control-forms" placeholder="Raça" required>
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
+            </div>   
+            <div class="form-group col-lg-6 col-12 pt-3 pt-lg-1"> 
+                <label> Data da criação* (dia/mês/ano) </label> 
+                <input matInput [(ngModel)]="bovino.dataCriacao" mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text" name="dataCriacao" class="form-control-forms" placeholder="00/00/0000" required> 
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
+            </div>
+            <div class="form-group col-lg-6 col-12 pt-3 pt-lg-1"> 
+                <label> Data da saída* (dia/mês/ano) </label> 
+                <input matInput [(ngModel)]="bovino.dataSaida" mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text" name="dataSaida" class="form-control-forms" placeholder="00/00/0000" required> 
+                <div class="invalid-feedback">
+                    Preencha o campo acima.
+                </div>
+            </div>  
         </div>
-        <div class="text-right pt-4">
-            <button (click)='update()' class="btn btn-primary px-5 col-lg-6"> Alterar </button>
-            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6"> Cancelar </button>
+        <div class="pt-4">
+            <button (click)='update()' class="btn btn-primary px-5 col-lg-6 col-12"> Alterar </button>
+            <button (click)='cancel()' class="btn btn-danger px-5 col-lg-6 col-12"> Cancelar </button>
         </div> 
     </form>
 </div>

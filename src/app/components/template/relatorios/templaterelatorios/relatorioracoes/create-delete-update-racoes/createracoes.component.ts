@@ -24,6 +24,7 @@ export class CreateracoesComponent implements OnInit {
   create(): void {
     if(this.racao.ingredientes != '')
     {   
+      this.racao.dataCriacao = "29/10/2021"
       this.service.create(this.racao).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
         this.service.mensagem('Ração criado com sucesso!');

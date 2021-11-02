@@ -1,7 +1,11 @@
 export interface Vendas {
     id?: String,
-    valorArroba: String,
+    valorArroba: number,
     dataVenda: String,
     registroComprador: String,
-    valorLote: String
+    valorLote: number
+}
+
+export interface PesoVendas {
+    pesoLote: number 
 }

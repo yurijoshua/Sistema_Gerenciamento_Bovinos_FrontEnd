@@ -24,17 +24,17 @@ export class PastosService {
   }
 
   create(pasto: Pastos): Observable<Pastos>{
-    const url = `${this.baseUrl}pasto/create`
+    const url = `${this.baseUrl}pasto`
     return this.http.post<Pastos>(url, pasto)
   }
 
   delete(id: String): Observable<void>{
-    const url = `${this.baseUrl}pasto/delete/${id}`
+    const url = `${this.baseUrl}pasto/${id}`
     return this.http.delete<void>(url)
   }
 
   update(pasto: Pastos):Observable<void> {
-    const url = `${this.baseUrl}pasto/update/${pasto.id}`
+    const url = `${this.baseUrl}pasto/${pasto.id}`
     return this.http.put<void>(url, pasto)
   }
 
