@@ -19,7 +19,7 @@ export class RacoesService {
     return this.http.get<Racoes[]>(url);
   }
 
-  findallracoesbovino(id: String):Observable<Lotes[]> {
+  findalllotesracao(id: String):Observable<Lotes[]> {
     const url = `${this.baseUrl}statusracaoandlote/findallbyracao?racao=${id}`
     return this.http.get<Lotes[]>(url);
   }

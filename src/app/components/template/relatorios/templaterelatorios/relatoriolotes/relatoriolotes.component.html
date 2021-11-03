@@ -26,11 +26,17 @@
   
           <!-- info Column -->
           <ng-container matColumnDef="info">
-            <th class="margin-th mat-infos table-light text-dark" mat-header-cell *matHeaderCellDef> <label class='lead'> Bovinos </label> </th>
+            <th class="margin-th mat-infos table-light text-dark" mat-header-cell *matHeaderCellDef> <label class='lead'> Bovinos | Ração | Pasto </label> </th>
             <td class="margin-td" mat-cell *matCellDef="let element"> 
               <a class='lote' routerLink="/lote/bovinos/{{element.id}}">
                 <img class='iconbovino mx-3' src="assets/bovino.png" alt="">
+              </a>
+              <a class='lote' routerLink="/lote/racoes/{{element.id}}">
+                <img class='iconbovino mx-3' src="assets/racao.png" alt="">
               </a>  
+              <a class='lote' routerLink="/lote/pastos/{{element.id}}">
+                <img class='iconbovino mx-3' src="assets/pasto.png" alt="">
+              </a> 
             </td>
           </ng-container>
   

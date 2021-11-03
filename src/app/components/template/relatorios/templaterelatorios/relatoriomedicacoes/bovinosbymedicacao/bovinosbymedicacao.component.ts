@@ -3,26 +3,26 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { Lotes } from '../../relatoriolotes/lotes.model';
-import { PastosService } from '../pastos.service';
+import { Bovinos } from '../../relatoriobovinos/bovinos.model';
+import { MedicacoesService } from '../medicacoes.service';
 
 @Component({
-  selector: 'app-lotesbypasto',
-  templateUrl: './lotesbypasto.component.html',
-  styleUrls: ['./lotesbypasto.component.css']
+  selector: 'app-bovinosbymedicacao',
+  templateUrl: './bovinosbymedicacao.component.html',
+  styleUrls: ['./bovinosbymedicacao.component.css']
 })
-export class LotesbypastoComponent implements AfterViewInit {
+export class BovinosbymedicacaoComponent implements AfterViewInit {
 
   private id!: String;
   
-  displayedColumns: string[] = ['nomeLote', 'dataCriacao'];
+  displayedColumns: string[] = ['brinco', 'raca','dataCriacao','dataSaida'];
   
-  lotes: Lotes[] = [];
+  bovinos: Bovinos[] = [];
 
-  dataSource: MatTableDataSource<Lotes>;
+  dataSource: MatTableDataSource<Bovinos>;
 
-  constructor(private service: PastosService, private aroute: ActivatedRoute ) { 
-    this.dataSource = new MatTableDataSource(this.lotes)
+  constructor(private service: MedicacoesService, private aroute: ActivatedRoute ) { 
+    this.dataSource = new MatTableDataSource(this.bovinos)
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,7 +30,7 @@ export class LotesbypastoComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findalllotespasto();
+    this.findAllbovinosbylote();
   }
 
   applyFilter(event: Event) {
@@ -42,8 +42,8 @@ export class LotesbypastoComponent implements AfterViewInit {
     }
   }
 
-  findalllotespasto() {
-    this.service.findAllByPasto(this.id).subscribe(resposta => {
+  findAllbovinosbylote() {
+    this.service.findAllByMedicacao(this.id).subscribe(resposta => {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

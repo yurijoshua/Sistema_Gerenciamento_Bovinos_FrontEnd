@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Lotes } from '../relatoriolotes/lotes.model';
 import { Pastos } from './pastos.model';
 
 @Injectable({
@@ -12,6 +13,11 @@ export class PastosService {
   baseUrl: String = environment.baseUrl;
 
   constructor(private http: HttpClient, private snack: MatSnackBar) { }
+
+  findAllByPasto(id: String):Observable<Lotes[]> {
+    const url = `${this.baseUrl}statuspastoandlote/findallbypasto?pasto=${id}`
+    return this.http.get<Lotes[]>(url);
+  }
 
   findAll():Observable<Pastos[]> {
     const url = `${this.baseUrl}pasto`

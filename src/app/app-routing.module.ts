@@ -35,6 +35,16 @@ import { DeletehistmedicbovinoComponent } from './components/template/relatorios
 import { UpdatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/updatehistmedicbovino.component';
 import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
 import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
+import { RacoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/racoesbylote.component';
+import { CreateracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/createracoesbylote.component';
+import { DeleteracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/deleteracoesbylote.component';
+import { UpdateracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/updateracoesbylote.component';
+import { LotesbypastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/lotesbypasto/lotesbypasto.component';
+import { BovinosbymedicacaoComponent } from './components/template/relatorios/templaterelatorios/relatoriomedicacoes/bovinosbymedicacao/bovinosbymedicacao.component';
+import { PastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/pastosbylote.component';
+import { CreatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/createpastosbylote.component';
+import { DeletepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/deletepastosbylote.component';
+import { UpdatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/updatepastosbylote.component';
 
 const routes: Routes = [
   {
@@ -60,6 +70,38 @@ const routes: Routes = [
   {
     path: 'lote/bovinos/:id',
     component: BovinosbyloteComponent
+  },
+  {
+    path: 'lote/racoes/:id',
+    component: RacoesbyloteComponent
+  },
+  {
+    path: 'lote/racoes/update/:id',
+    component: UpdateracoesbyloteComponent
+  },
+  {
+    path: 'lote/racoes/delete/:id',
+    component: DeleteracoesbyloteComponent
+  },
+  {
+    path: 'lote/racoes/create/:id',
+    component: CreateracoesbyloteComponent
+  },
+  {
+    path: 'lote/pastos/:id',
+    component: PastosbyloteComponent
+  },
+  {
+    path: 'lote/pastos/create/:id',
+    component: CreatepastosbyloteComponent
+  },
+  {
+    path: 'lote/pastos/delete/:id',
+    component: DeletepastosbyloteComponent
+  },
+  {
+    path: 'lote/pastos/update/:id',
+    component: UpdatepastosbyloteComponent
   },
   {
     path: 'peso/create/:id',
@@ -138,6 +180,10 @@ const routes: Routes = [
     component: UpdatemedicacoesComponent
   },
   {
+    path: 'medicacao/lotes/:id',
+    component: BovinosbymedicacaoComponent
+  },
+  {
     path: 'racao/create',
     component: CreateracoesComponent
   },
@@ -164,6 +210,10 @@ const routes: Routes = [
   {
     path: 'pasto/update/:id',
     component: UpdatepastoComponent
+  },
+  {
+    path: 'pasto/lotes/:id',
+    component: LotesbypastoComponent
   },
   {
     path: 'venda/create',

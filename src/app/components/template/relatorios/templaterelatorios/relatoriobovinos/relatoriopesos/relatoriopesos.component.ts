@@ -52,6 +52,6 @@ export class RelatoriopesosComponent  implements AfterViewInit {
   }
 
   navegarParaCadastroPeso(): void {
-    this.route.navigate([`peso/create/${window.location.pathname.split('/')[3]}`])
+    this.route.navigate([`peso/create/${this.id}`])
   }
 }

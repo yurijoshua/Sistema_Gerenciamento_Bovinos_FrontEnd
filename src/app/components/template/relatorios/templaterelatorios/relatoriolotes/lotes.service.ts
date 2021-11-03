@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Bovinos } from '../relatoriobovinos/bovinos.model';
+import { Racoes } from '../relatorioracoes/racoes.model';
 import { Lotes } from './lotes.model';
 
 @Injectable({
@@ -18,6 +19,11 @@ export class LotesService {
   findAllbovinosbylote(id: String):Observable<[Bovinos]> {
     const url = `${this.baseUrl}statusbovinoandlote/findallbylote?lote=${id}`
     return this.http.get<[Bovinos]>(url);
+  }
+
+  findallracoeslote(id: String):Observable<Racoes[]> {
+    const url = `${this.baseUrl}statusracaoandlote/findallbylote?lote=${id}`
+    return this.http.get<Racoes[]>(url);
   }
 
   findAll():Observable<Lotes[]> {

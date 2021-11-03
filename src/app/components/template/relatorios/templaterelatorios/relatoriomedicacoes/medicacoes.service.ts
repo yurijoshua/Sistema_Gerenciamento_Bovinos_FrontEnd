@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Bovinos } from '../relatoriobovinos/bovinos.model';
 import { Medicacoes } from './medicacoes.model';
 
 @Injectable({
@@ -12,6 +13,11 @@ export class MedicacoesService {
   baseUrl: String = environment.baseUrl;
 
   constructor(private http: HttpClient, private snack: MatSnackBar) { }
+
+  findAllByMedicacao(id: String):Observable<Bovinos[]> {
+    const url = `${this.baseUrl}historicomedicacao/findallbymedicacao?medicacao=${id}`
+    return this.http.get<Bovinos[]>(url);
+  }
 
   findAll():Observable<Medicacoes[]> {
     const url = `${this.baseUrl}medicacao`

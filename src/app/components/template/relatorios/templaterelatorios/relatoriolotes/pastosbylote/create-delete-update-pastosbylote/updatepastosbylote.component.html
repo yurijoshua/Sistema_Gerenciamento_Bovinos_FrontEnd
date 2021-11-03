@@ -3,18 +3,18 @@
     <p class="text-center display-5 text-decoration-underline"> Alterar lote do bovino </p>
     <form class="was-validated" novalidate>
         <div class="row py-4">
-            <p class="text-left lead"> Dados lote do bovino  </p> <hr>
+            <p class="text-left lead"> Dados pasto do lote  </p> <hr>
             <div class="row"> 
                 <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
                     <label> Tempo inicial* (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="lotbov.tempoInicial"mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text"  name="tempoInicial" class="form-control-forms" placeholder="00/00/0000" required> 
+                    <input matInput [(ngModel)]="Pastoslote.tempoInicial"mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text"  name="tempoInicial" class="form-control-forms" placeholder="00/00/0000" required> 
                     <div class="invalid-feedback">
                         Preencha o campo acima.
                     </div>
                 </div> 
                 <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
                     <label> Tempo final (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="lotbov.tempoFinal" mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text"  name="tempoFinal" class="form-control-forms" placeholder="00/00/0000" required> 
+                    <input matInput [(ngModel)]="Pastoslote.tempoFinal" mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text"  name="tempoFinal" class="form-control-forms" placeholder="00/00/0000" required> 
                     <div class="invalid-feedback">
                         Preencha o campo acima.
                     </div>

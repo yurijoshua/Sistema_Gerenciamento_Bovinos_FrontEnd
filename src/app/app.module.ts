@@ -69,6 +69,15 @@ import {MatSelectModule} from '@angular/material/select';
 import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
 import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
 import { LotesbypastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/lotesbypasto/lotesbypasto.component';
+import { RacoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/racoesbylote.component';
+import { UpdateracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/updateracoesbylote.component';
+import { CreateracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/createracoesbylote.component';
+import { DeleteracoesbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/racoesbylote/create-delete-update-racoesbylote/deleteracoesbylote.component';
+import { BovinosbymedicacaoComponent } from './components/template/relatorios/templaterelatorios/relatoriomedicacoes/bovinosbymedicacao/bovinosbymedicacao.component';
+import { PastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/pastosbylote.component';
+import { UpdatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/updatepastosbylote.component';
+import { CreatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/createpastosbylote.component';
+import { DeletepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/deletepastosbylote.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +130,16 @@ import { LotesbypastoComponent } from './components/template/relatorios/template
     DeletehistlotebovinoComponent,
     BovinosbyloteComponent,
     LotesbyracaoComponent,
-    LotesbypastoComponent
+    LotesbypastoComponent,
+    RacoesbyloteComponent,
+    CreateracoesbyloteComponent,
+    DeleteracoesbyloteComponent,
+    UpdateracoesbyloteComponent,
+    BovinosbymedicacaoComponent,
+    PastosbyloteComponent,
+    CreatepastosbyloteComponent,
+    DeletepastosbyloteComponent,
+    UpdatepastosbyloteComponent
   ],
   imports: [
     BrowserModule,

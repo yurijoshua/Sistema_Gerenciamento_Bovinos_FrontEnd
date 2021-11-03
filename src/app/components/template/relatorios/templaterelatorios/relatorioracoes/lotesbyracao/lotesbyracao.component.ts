@@ -30,7 +30,7 @@ export class LotesbyracaoComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findAllbovinosbylote();
+    this.findalllotesracao();
   }
 
   applyFilter(event: Event) {
@@ -42,8 +42,8 @@ export class LotesbyracaoComponent implements AfterViewInit {
     }
   }
 
-  findAllbovinosbylote() {
-    this.service.findallracoesbovino(this.id).subscribe(resposta => {
+  findalllotesracao() {
+    this.service.findalllotesracao(this.id).subscribe(resposta => {
       console.log(resposta)
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;

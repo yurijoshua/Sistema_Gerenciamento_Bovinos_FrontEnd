@@ -7,20 +7,20 @@
             <div class="row"> 
                 <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
                     <label> Tempo inicial* (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="lotbov.tempoInicial" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoInicial" class="form-control-forms" placeholder="00/00/0000" required> 
+                    <input matInput [(ngModel)]="racoeslote.tempoInicial" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoInicial" class="form-control-forms" placeholder="00/00/0000" required> 
                     <div class="invalid-feedback">
                         Preencha o campo acima.
                     </div>
                 </div> 
                 <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
                     <label> Tempo final (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="lotbov.tempoFinal" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoFinal" class="form-control-forms" placeholder="00/00/0000"> 
+                    <input matInput [(ngModel)]="racoeslote.tempoFinal" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoFinal" class="form-control-forms" placeholder="00/00/0000"> 
                 </div> 
                 <div class="form-group col-lg-4 pt-3 pt-lg-1">
                     <mat-form-field class="w-100">
-                        <mat-label>Lotes</mat-label>
+                        <mat-label> Rações </mat-label>
                         <mat-select (selectionChange)="changeClient($event.value)" required>
-                            <mat-option *ngFor="let state of states" [value]="state.id">{{state.nomeLote}} | {{state.dataCriacao}}</mat-option>
+                            <mat-option *ngFor="let state of states" [value]="state.id">{{state.ingredientes}} | {{state.dataCriacao}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
