@@ -17,7 +17,7 @@ export class DeletebovinosComponent implements OnInit {
     brinco: '',
     raca: '',
     dataCriacao: '',
-    dataSaida: ''
+    status: ''
   }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class DeletebovinosComponent implements OnInit {
       this.bovino.brinco = resposta.brinco
       this.bovino.raca = resposta.raca
       this.bovino.dataCriacao = resposta.dataCriacao
-      this.bovino.dataSaida = resposta.dataSaida
+      this.bovino.status = resposta.status
     })
   }
 

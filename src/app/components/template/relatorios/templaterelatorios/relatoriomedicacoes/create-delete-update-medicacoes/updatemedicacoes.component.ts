@@ -15,7 +15,7 @@ export class UpdatemedicacoesComponent implements OnInit {
   medicacao: Medicacoes = {
     id: '',
     periodicidade: '',
-    produtoUtilizado: '',
+    nomeMedicacao: '',
     loteMedicacao: ''
   }
 
@@ -27,7 +27,7 @@ export class UpdatemedicacoesComponent implements OnInit {
   findById(): void {
     this.service.findById(this.medicacao.id!).subscribe((resposta) => {
       this.medicacao.periodicidade = resposta.periodicidade
-      this.medicacao.produtoUtilizado = resposta.produtoUtilizado
+      this.medicacao.nomeMedicacao = resposta.nomeMedicacao
       this.medicacao.loteMedicacao = resposta.loteMedicacao
     })
   }

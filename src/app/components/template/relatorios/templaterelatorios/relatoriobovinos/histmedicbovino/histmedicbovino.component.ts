@@ -15,7 +15,7 @@ export class HistmedicbovinoComponent implements AfterViewInit {
 
   private id!: String;
 
-  displayedColumns: string[] = ['medicamento','dosagem','dataAplicacao','acoes'];
+  displayedColumns: string[] = ['nomeMedicacao','dosagem','dataAplicacao','acoes'];
   
   medbov: MedicByBovino[] = [];
 

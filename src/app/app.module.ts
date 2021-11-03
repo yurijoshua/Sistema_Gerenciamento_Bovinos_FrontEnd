@@ -68,6 +68,7 @@ import { UpdatehistmedicbovinoComponent } from './components/template/relatorios
 import {MatSelectModule} from '@angular/material/select';
 import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
 import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
+import { LotesbypastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/lotesbypasto/lotesbypasto.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { LotesbyracaoComponent } from './components/template/relatorios/template
     CreatehistlotebovinoComponent,
     DeletehistlotebovinoComponent,
     BovinosbyloteComponent,
-    LotesbyracaoComponent
+    LotesbyracaoComponent,
+    LotesbypastoComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Lotes } from '../relatoriolotes/lotes.model';
 import { Vendas } from './vendas.model';
 
 @Injectable({
@@ -19,13 +20,18 @@ export class VendasService {
     return this.http.get<Vendas[]>(url);
   }
 
+  findallLotesAtivos():Observable<[]> {
+    const url = `${this.baseUrl}venda/findallLotesAtivos`
+    return this.http.get<[]>(url);
+  }
+
   findById(id: String):Observable<Vendas> {
     const url = `${this.baseUrl}venda/${id}`
     return this.http.get<Vendas>(url);
   }
 
-  create(venda: Vendas): Observable<Vendas>{
-    const url = `${this.baseUrl}venda?usuario=1`
+  create(id: Number,venda: Vendas): Observable<Vendas>{
+    const url = `${this.baseUrl}venda?usuario=1&lote=${id}`
     return this.http.post<Vendas>(url, venda)
   }
 

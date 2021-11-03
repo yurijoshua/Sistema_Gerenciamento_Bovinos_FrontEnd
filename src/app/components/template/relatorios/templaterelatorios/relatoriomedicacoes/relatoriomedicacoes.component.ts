@@ -12,7 +12,7 @@ import { MedicacoesService } from './medicacoes.service';
 })
 export class RelatoriomedicacoesComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['produtoUtilizado', 'periodicidade', 'loteMedicacao','info','acoes'];
+  displayedColumns: string[] = ['nomeMedicacao', 'periodicidade', 'loteMedicacao','info','acoes'];
   
   medicacao: Medicacoes[] = [];
 

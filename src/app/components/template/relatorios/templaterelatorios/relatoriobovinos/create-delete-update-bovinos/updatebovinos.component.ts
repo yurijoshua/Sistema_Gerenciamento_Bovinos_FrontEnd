@@ -12,12 +12,14 @@ export class UpdatebovinosComponent implements OnInit {
 
   constructor(private service: BovinosService, private route: Router, private aroute: ActivatedRoute) { }
 
+  states = ['Vivo','Vendido','Morto'];
+
   bovino: Bovinos = {
     id: '',
     brinco: '',
     raca: '',
     dataCriacao: '',
-    dataSaida: ''
+    status: ''
   }
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class UpdatebovinosComponent implements OnInit {
       this.bovino.brinco = resposta.brinco
       this.bovino.raca = resposta.raca
       this.bovino.dataCriacao = resposta.dataCriacao
-      this.bovino.dataSaida = resposta.dataSaida
+      this.bovino.status = resposta.status
     })
   }
 
@@ -39,7 +41,7 @@ export class UpdatebovinosComponent implements OnInit {
     this.route.navigate([`relatorios`])
     this.service.mensagem(`Bovino alterado com êxito!`);
     }, err => {
-        this.service.mensagem(err.error.message)
+      this.service.mensagem(err.error.message)
     })
   }
   
@@ -48,14 +50,11 @@ export class UpdatebovinosComponent implements OnInit {
   }
 
   onkey(event: any) {
-    if(event.target.name == "dataCriacao")
-    {
-      this.bovino.dataCriacao = event.target.value
-    }
-    else
-    {
-      this.bovino.dataSaida = event.target.value
-    }
+    this.bovino.dataCriacao = event.target.value
+  }
+
+  changeClient(value: any){
+    this.bovino.status = value;
   }
 
 }

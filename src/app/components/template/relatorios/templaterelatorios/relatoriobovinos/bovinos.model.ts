@@ -3,5 +3,5 @@ export interface Bovinos {
     brinco: String;
     raca: String;
     dataCriacao: String;
-    dataSaida: String;
+    status: String;
 }

@@ -44,6 +44,7 @@ export class LotesbyracaoComponent implements AfterViewInit {
 
   findAllbovinosbylote() {
     this.service.findallracoesbovino(this.id).subscribe(resposta => {
+      console.log(resposta)
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

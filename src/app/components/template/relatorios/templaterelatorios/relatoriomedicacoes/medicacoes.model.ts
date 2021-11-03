@@ -1,6 +1,6 @@
 export interface Medicacoes {
     id?: String,
     periodicidade: String,
-    produtoUtilizado: String,
+    nomeMedicacao: String,
     loteMedicacao: String
 }

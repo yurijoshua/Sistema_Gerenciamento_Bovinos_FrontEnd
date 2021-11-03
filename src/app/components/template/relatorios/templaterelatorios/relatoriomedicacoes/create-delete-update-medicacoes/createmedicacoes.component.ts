@@ -14,7 +14,7 @@ export class CreatemedicacoesComponent implements OnInit {
 
   medicacao: Medicacoes = {
     periodicidade: '',
-    produtoUtilizado: '',
+    nomeMedicacao: '',
     loteMedicacao: ''
   }
 
@@ -23,7 +23,7 @@ export class CreatemedicacoesComponent implements OnInit {
   }
 
   create(): void {
-    if(this.medicacao.produtoUtilizado != '' && this.medicacao.periodicidade != '' && this.medicacao.loteMedicacao != '')
+    if(this.medicacao.nomeMedicacao != '' && this.medicacao.periodicidade != '' && this.medicacao.loteMedicacao != '')
     {   
       this.service.create(this.medicacao).subscribe((resposta) => {
         this.route.navigate(['relatorios'])

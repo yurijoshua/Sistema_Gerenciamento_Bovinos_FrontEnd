@@ -17,7 +17,7 @@ export class CreatebovinosComponent implements OnInit {
     brinco: '',
     raca: '',
     dataCriacao: '',
-    dataSaida: ''
+    status: ''
   }
 
   ngOnInit(): void   {

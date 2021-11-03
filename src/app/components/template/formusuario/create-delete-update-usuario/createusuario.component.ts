@@ -26,7 +26,6 @@ export class CreateusuarioComponent implements OnInit {
   create(): void {
     if(this.usuario.nome != '' && this.usuario.usuario != '' && this.usuario.senha != '')
     {   
-      this.usuario.dataCriacao = "28/10/2021"
       this.service.create(this.usuario).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
         this.service.mensagem('Usuario cadastrado com sucesso!');
