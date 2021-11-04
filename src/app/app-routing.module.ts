@@ -45,187 +45,205 @@ import { PastosbyloteComponent } from './components/template/relatorios/template
 import { CreatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/createpastosbylote.component';
 import { DeletepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/deletepastosbylote.component';
 import { UpdatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/updatepastosbylote.component';
+import { TelaloginComponent } from './components/template/telalogin/telalogin.component';
+import { AuthenticationComponent } from './components/template/telalogin/authentication/authentication.component';
+import { AuthGuard } from './components/template/telalogin/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: AuthenticationComponent,
+    children:  [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'animal/create',
+        component: CreatebovinosComponent
+      },
+      {
+        path: 'lote/create',
+        component: CreatelotesComponent
+      },
+      {
+        path: 'lote/delete/:id',
+        component: DeletelotesComponent
+      },
+      {
+        path: 'lote/update/:id',
+        component: UpdatelotesComponent
+      },
+      {
+        path: 'lote/bovinos/:id',
+        component: BovinosbyloteComponent
+      },
+      {
+        path: 'lote/racoes/:id',
+        component: RacoesbyloteComponent
+      },
+      {
+        path: 'lote/racoes/update/:id',
+        component: UpdateracoesbyloteComponent
+      },
+      {
+        path: 'lote/racoes/delete/:id',
+        component: DeleteracoesbyloteComponent
+      },
+      {
+        path: 'lote/racoes/create/:id',
+        component: CreateracoesbyloteComponent
+      },
+      {
+        path: 'lote/pastos/:id',
+        component: PastosbyloteComponent
+      },
+      {
+        path: 'lote/pastos/create/:id',
+        component: CreatepastosbyloteComponent
+      },
+      {
+        path: 'lote/pastos/delete/:id',
+        component: DeletepastosbyloteComponent
+      },
+      {
+        path: 'lote/pastos/update/:id',
+        component: UpdatepastosbyloteComponent
+      },
+      {
+        path: 'peso/create/:id',
+        component: CreatepesosComponent
+      },
+      {
+        path: 'animal/delete/:id',
+        component: DeletebovinosComponent
+      },
+      {
+        path: 'peso/delete/:id',
+        component: DeletepesosComponent
+      },
+      {
+        path: 'relatorios',
+        component: RelatoriosComponent
+      },
+      {
+        path: 'usuario/create',
+        component: CreateusuarioComponent
+      },
+      {
+        path: 'peso/animal/:id',
+        component: RelatoriopesosComponent
+      },
+      {
+        path: 'bovino/lote/:id',
+        component: HistlotebovinoComponent
+      },
+      {
+        path: 'bovino/lote/create/:id',
+        component: CreatehistlotebovinoComponent
+      },
+      {
+        path: 'bovino/lote/update/:id',
+        component: UpdatehistlotebovinoComponent
+      },
+      {
+        path: 'bovino/lote/delete/:id',
+        component: DeletehistlotebovinoComponent
+      },
+      {
+        path: 'bovino/medicacao/:id',
+        component: HistmedicbovinoComponent
+      },
+      {
+        path: 'bovino/medicacao/create/:id',
+        component: CreatehistmedicbovinoComponent
+      },
+      {
+        path: 'bovino/medicacao/update/:id',
+        component: UpdatehistmedicbovinoComponent
+      },
+      {
+        path: 'bovino/medicacao/delete/:id',
+        component: DeletehistmedicbovinoComponent
+      },
+      {
+        path: 'animal/update/:id',
+        component: UpdatebovinosComponent
+      },
+      {
+        path: 'peso/update/:id',
+        component: UpdatepesosComponent
+      },
+      {
+        path: 'medicacao/create',
+        component: CreatemedicacoesComponent
+      },
+      {
+        path: 'medicacao/delete/:id',
+        component: DeletemedicacoesComponent
+      },
+      {
+        path: 'medicacao/update/:id',
+        component: UpdatemedicacoesComponent
+      },
+      {
+        path: 'medicacao/lotes/:id',
+        component: BovinosbymedicacaoComponent
+      },
+      {
+        path: 'racao/create',
+        component: CreateracoesComponent
+      },
+      {
+        path: 'racao/delete/:id',
+        component: DeleteracoesComponent
+      },
+      {
+        path: 'racao/update/:id',
+        component: UpdateracoesComponent
+      },
+      {
+        path: 'racao/bovinos/:id',
+        component: LotesbyracaoComponent
+      },
+      {
+        path: 'pasto/create',
+        component: CreatepastoComponent
+      },
+      {
+        path: 'pasto/delete/:id',
+        component: DeletepastoComponent
+      },
+      {
+        path: 'pasto/update/:id',
+        component: UpdatepastoComponent
+      },
+      {
+        path: 'pasto/lotes/:id',
+        component: LotesbypastoComponent
+      },
+      {
+        path: 'venda/create',
+        component: CreatevendasComponent
+      },
+      {
+        path: 'venda/delete/:id',
+        component: DeletevendasComponent
+      },
+      {
+        path: 'venda/update/:id',
+        component: UpdatevendasComponent
+      }
+    ], 
+    canActivate: [AuthGuard]
   },
   {
-    path: 'animal/create',
-    component: CreatebovinosComponent
-  },
-  {
-    path: 'lote/create',
-    component: CreatelotesComponent
-  },
-  {
-    path: 'lote/delete/:id',
-    component: DeletelotesComponent
-  },
-  {
-    path: 'lote/update/:id',
-    component: UpdatelotesComponent
-  },
-  {
-    path: 'lote/bovinos/:id',
-    component: BovinosbyloteComponent
-  },
-  {
-    path: 'lote/racoes/:id',
-    component: RacoesbyloteComponent
-  },
-  {
-    path: 'lote/racoes/update/:id',
-    component: UpdateracoesbyloteComponent
-  },
-  {
-    path: 'lote/racoes/delete/:id',
-    component: DeleteracoesbyloteComponent
-  },
-  {
-    path: 'lote/racoes/create/:id',
-    component: CreateracoesbyloteComponent
-  },
-  {
-    path: 'lote/pastos/:id',
-    component: PastosbyloteComponent
-  },
-  {
-    path: 'lote/pastos/create/:id',
-    component: CreatepastosbyloteComponent
-  },
-  {
-    path: 'lote/pastos/delete/:id',
-    component: DeletepastosbyloteComponent
-  },
-  {
-    path: 'lote/pastos/update/:id',
-    component: UpdatepastosbyloteComponent
-  },
-  {
-    path: 'peso/create/:id',
-    component: CreatepesosComponent
-  },
-  {
-    path: 'animal/delete/:id',
-    component: DeletebovinosComponent
-  },
-  {
-    path: 'peso/delete/:id',
-    component: DeletepesosComponent
-  },
-  {
-    path: 'relatorios',
-    component: RelatoriosComponent
-  },
-  {
-    path: 'usuario/create',
-    component: CreateusuarioComponent
-  },
-  {
-    path: 'peso/animal/:id',
-    component: RelatoriopesosComponent
-  },
-  {
-    path: 'bovino/lote/:id',
-    component: HistlotebovinoComponent
-  },
-  {
-    path: 'bovino/lote/create/:id',
-    component: CreatehistlotebovinoComponent
-  },
-  {
-    path: 'bovino/lote/update/:id',
-    component: UpdatehistlotebovinoComponent
-  },
-  {
-    path: 'bovino/lote/delete/:id',
-    component: DeletehistlotebovinoComponent
-  },
-  {
-    path: 'bovino/medicacao/:id',
-    component: HistmedicbovinoComponent
-  },
-  {
-    path: 'bovino/medicacao/create/:id',
-    component: CreatehistmedicbovinoComponent
-  },
-  {
-    path: 'bovino/medicacao/update/:id',
-    component: UpdatehistmedicbovinoComponent
-  },
-  {
-    path: 'bovino/medicacao/delete/:id',
-    component: DeletehistmedicbovinoComponent
-  },
-  {
-    path: 'animal/update/:id',
-    component: UpdatebovinosComponent
-  },
-  {
-    path: 'peso/update/:id',
-    component: UpdatepesosComponent
-  },
-  {
-    path: 'medicacao/create',
-    component: CreatemedicacoesComponent
-  },
-  {
-    path: 'medicacao/delete/:id',
-    component: DeletemedicacoesComponent
-  },
-  {
-    path: 'medicacao/update/:id',
-    component: UpdatemedicacoesComponent
-  },
-  {
-    path: 'medicacao/lotes/:id',
-    component: BovinosbymedicacaoComponent
-  },
-  {
-    path: 'racao/create',
-    component: CreateracoesComponent
-  },
-  {
-    path: 'racao/delete/:id',
-    component: DeleteracoesComponent
-  },
-  {
-    path: 'racao/update/:id',
-    component: UpdateracoesComponent
-  },
-  {
-    path: 'racao/bovinos/:id',
-    component: LotesbyracaoComponent
-  },
-  {
-    path: 'pasto/create',
-    component: CreatepastoComponent
-  },
-  {
-    path: 'pasto/delete/:id',
-    component: DeletepastoComponent
-  },
-  {
-    path: 'pasto/update/:id',
-    component: UpdatepastoComponent
-  },
-  {
-    path: 'pasto/lotes/:id',
-    component: LotesbypastoComponent
-  },
-  {
-    path: 'venda/create',
-    component: CreatevendasComponent
-  },
-  {
-    path: 'venda/delete/:id',
-    component: DeletevendasComponent
-  },
-  {
-    path: 'venda/update/:id',
-    component: UpdatevendasComponent
+    path: '',
+    component: AuthenticationComponent,
+    children: [
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
+      {path: 'login', component: TelaloginComponent},
+    ]
   }
 ];
 

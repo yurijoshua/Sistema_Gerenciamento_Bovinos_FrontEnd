@@ -7,5 +7,5 @@ export interface Vendas {
 }
 
 export interface PesoVendas {
-    pesoLote: number 
+    pesoLote: Number 
 }

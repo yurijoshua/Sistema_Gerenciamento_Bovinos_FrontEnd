@@ -78,6 +78,7 @@ import { PastosbyloteComponent } from './components/template/relatorios/template
 import { UpdatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/updatepastosbylote.component';
 import { CreatepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/createpastosbylote.component';
 import { DeletepastosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/pastosbylote/create-delete-update-pastosbylote/deletepastosbylote.component';
+import { AuthenticationComponent } from './components/template/telalogin/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -139,7 +140,8 @@ import { DeletepastosbyloteComponent } from './components/template/relatorios/te
     PastosbyloteComponent,
     CreatepastosbyloteComponent,
     DeletepastosbyloteComponent,
-    UpdatepastosbyloteComponent
+    UpdatepastosbyloteComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

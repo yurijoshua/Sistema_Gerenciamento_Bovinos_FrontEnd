@@ -65,6 +65,10 @@ export class CreatehistmedicbovinoComponent implements OnInit {
     
   }
 
+  onkey(event: any) {
+    this.medbov.dataAplicacao = event.target.value
+  }
+
   cancel(): void {
     this.route.navigate([`bovino/medicacao/${this.idbov}`])
   }

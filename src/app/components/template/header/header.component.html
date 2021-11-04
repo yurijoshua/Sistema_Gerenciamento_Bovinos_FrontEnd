@@ -1,8 +1,6 @@
 <div class="container-fluid ">
     <nav class="navbar navbar-light bg-light main justify-content-center">
-        <a class="navbar-brand" href="#">
-            <label class="lead"> <img src="assets/logo.png" alt="" width="30" height="24"> Gerenciamento de bovinos </label>
-        </a>
+        <label class="lead"> <img src="assets/logo.png" alt="" width="30" height="24"> Gerenciamento de bovinos </label>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light cabecalho-mobile">
     <div class="container-fluid text-center">
@@ -43,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a routerLink="/usuario/create" class="dropdown-item">Novo Usuário</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a (click)="RemoveToken()" href="" class="dropdown-item">Logout</a></li>
                     </ul>
                 </li>
             </ul>

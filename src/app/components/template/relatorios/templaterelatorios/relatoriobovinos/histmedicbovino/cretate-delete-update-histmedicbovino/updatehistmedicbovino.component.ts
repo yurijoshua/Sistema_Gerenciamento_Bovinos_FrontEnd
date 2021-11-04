@@ -50,4 +50,8 @@ export class UpdatehistmedicbovinoComponent implements OnInit {
     this.location.back();
   }
 
+  onkey(event: any) {
+    this.medbov.dataAplicacao = event.target.value
+  }
+
 }

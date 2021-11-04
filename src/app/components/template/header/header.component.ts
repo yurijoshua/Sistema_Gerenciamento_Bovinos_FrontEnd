@@ -12,4 +12,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  RemoveToken() {
+    return new Promise((resolve) => {
+      window.localStorage.removeItem('token')
+      resolve(true)
+    })
+  }
+
 }

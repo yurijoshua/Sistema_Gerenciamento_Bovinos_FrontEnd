@@ -15,7 +15,7 @@ export class BovinosbymedicacaoComponent implements AfterViewInit {
 
   private id!: String;
   
-  displayedColumns: string[] = ['brinco', 'raca','dataCriacao','dataSaida'];
+  displayedColumns: string[] = ['brinco', 'raca','dataCriacao','status'];
   
   bovinos: Bovinos[] = [];
 

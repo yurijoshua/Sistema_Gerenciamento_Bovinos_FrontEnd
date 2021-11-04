@@ -11,7 +11,7 @@
                 </div> 
                 <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
                     <label> Data de aplicação* (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="medbov.dataAplicacao" mask="00/00/0000"  maxlength="10" type="text" name="dataPesagem" class="form-control-forms" placeholder="00/00/0000" disabled> 
+                    <input matInput [(ngModel)]="medbov.dataAplicacao" mask="00/00/0000" (keyup)="onkey($event)" maxlength="10" type="text" name="dataPesagem" class="form-control-forms" placeholder="00/00/0000" disabled> 
                 </div>
             </div>   
         </div>

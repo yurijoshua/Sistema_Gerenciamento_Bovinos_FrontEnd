@@ -45,11 +45,10 @@ export class CreatevendasComponent implements OnInit {
     {   
       if(this.idlot != null)
       {
-        this.venda.valorLote = this.peso.pesoLote*this.venda.valorArroba
-        this.service.create(this.idlot,this.venda).subscribe((resposta) => {
+        this.service.create(this.idlot,this.venda,this.peso.pesoLote).subscribe((resposta) => {
         this.route.navigate(['relatorios'])
         this.service.mensagem('Venda cadastrada com sucesso!');
-      })
+        })
       }
       else
       {
