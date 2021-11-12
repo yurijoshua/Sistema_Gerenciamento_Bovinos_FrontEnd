@@ -35,7 +35,7 @@ export class DeletemedicacoesComponent implements OnInit {
   delete(): void{
     this.service.delete(this.medicacao.id!).subscribe((resposta) => {
     this.route.navigate([`relatorios`])
-    this.service.mensagem(`MEdicação deletadd com êxito!`);
+    this.service.mensagem(`Medicação deletada com êxito!`);
     }, err => {
         this.service.mensagem(err.error.message)
     })

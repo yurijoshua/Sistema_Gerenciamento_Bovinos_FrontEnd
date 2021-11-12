@@ -48,6 +48,8 @@ import { UpdatepastosbyloteComponent } from './components/template/relatorios/te
 import { TelaloginComponent } from './components/template/telalogin/telalogin.component';
 import { AuthenticationComponent } from './components/template/telalogin/authentication/authentication.component';
 import { AuthGuard } from './components/template/telalogin/auth.guard';
+import { DeleteusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/deleteusuario.component';
+import { UpdateusuarioComponent } from './components/template/formusuario/create-delete-update-usuario/updateusuario.component';
 
 const routes: Routes = [
   {
@@ -129,6 +131,14 @@ const routes: Routes = [
       {
         path: 'usuario/create',
         component: CreateusuarioComponent
+      },
+      {
+        path: 'usuario/delete/:id',
+        component: DeleteusuarioComponent
+      },
+      {
+        path: 'usuario/update/:id',
+        component: UpdateusuarioComponent
       },
       {
         path: 'peso/animal/:id',

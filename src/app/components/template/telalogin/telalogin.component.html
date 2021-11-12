@@ -6,9 +6,9 @@
         Gerenciamento de bovinos
       </div>
 
-      <form (ngSubmit)="onSubmit()" #form="ngForm">
-        <input type="text" id="login" [(ngModel)]='login.usuario' class="fadeIn second" name="login" placeholder="Usuario" required>
-        <input type="password" id="password" [(ngModel)]='login.senha' class="fadeIn third" name="password" placeholder="Senha" required>
+      <form (ngSubmit)="onSubmit()" #form="ngForm" class="was-validated" novalidate>
+        <input type="text" id="login" [(ngModel)]='login.usuario' class="fadeIn second" class="form-control-forms" name="login" placeholder="Usuario" required>
+        <input type="password" id="password" [(ngModel)]='login.senha' class="fadeIn third" class="form-control-forms" name="password" placeholder="Senha" required>
         <input type="submit" class="fadeIn fourth" value="Entrar">
       </form>
   

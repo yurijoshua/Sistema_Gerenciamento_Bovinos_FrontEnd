@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
@@ -65,7 +65,7 @@ import { UpdatehistlotebovinoComponent } from './components/template/relatorios/
 import { CreatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/createhistmedicbovino.component';
 import { DeletehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/deletehistmedicbovino.component';
 import { UpdatehistmedicbovinoComponent } from './components/template/relatorios/templaterelatorios/relatoriobovinos/histmedicbovino/cretate-delete-update-histmedicbovino/updatehistmedicbovino.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule} from '@angular/material/select';
 import { BovinosbyloteComponent } from './components/template/relatorios/templaterelatorios/relatoriolotes/bovinosbylote/bovinosbylote.component';
 import { LotesbyracaoComponent } from './components/template/relatorios/templaterelatorios/relatorioracoes/lotesbyracao/lotesbyracao.component';
 import { LotesbypastoComponent } from './components/template/relatorios/templaterelatorios/relatoriopastos/lotesbypasto/lotesbypasto.component';

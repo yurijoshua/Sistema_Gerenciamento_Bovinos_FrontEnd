@@ -21,11 +21,6 @@ export class LotesService {
     return this.http.get<[Bovinos]>(url);
   }
 
-  findallracoeslote(id: String):Observable<Racoes[]> {
-    const url = `${this.baseUrl}statusracaoandlote/findallbylote?lote=${id}`
-    return this.http.get<Racoes[]>(url);
-  }
-
   findAll():Observable<Lotes[]> {
     const url = `${this.baseUrl}lote`
     return this.http.get<Lotes[]>(url);

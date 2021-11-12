@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../telalogin/account.service';
+import { AuthGuard } from '../telalogin/auth.guard';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,14 +8,21 @@ import { AccountService } from '../telalogin/account.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private service : AccountService) { }
+  constructor(private authService: AuthGuard) { }
 
-  ngOnInit(): void {
+  mostrarMenu: boolean = false;
+  
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
   }
 
   RemoveToken() {
     return new Promise((resolve) => {
-      window.localStorage.removeItem('token')
+      window.localStorage.removeItem('id')
+      window.localStorage.removeItem('user')
+      window.localStorage.removeItem('password')
       resolve(true)
     })
   }

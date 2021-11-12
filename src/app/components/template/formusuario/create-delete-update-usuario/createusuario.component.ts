@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Usuario } from '../usuario.model';
 import { UsuarioService } from '../usuario.service';
@@ -10,7 +13,16 @@ import { UsuarioService } from '../usuario.service';
 })
 export class CreateusuarioComponent implements OnInit {
 
-  constructor(private service: UsuarioService, private route: Router)  {   }
+  displayedColumns: string[] = ['nome', 'usuario', 'senha', 'dataCriacao','acoes'];
+  
+  user: Usuario[] = [];
+
+  dataSource: MatTableDataSource<Usuario>;
+
+  constructor(private service: UsuarioService, private route: Router)  
+  {   
+    this.dataSource = new MatTableDataSource(this.user);
+  }
 
   usuario: Usuario = {
     nome: '',
@@ -20,8 +32,11 @@ export class CreateusuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.findAll();
   }
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   create(): void {
     if(this.usuario.nome != '' && this.usuario.usuario != '' && this.usuario.senha != '')
@@ -38,4 +53,21 @@ export class CreateusuarioComponent implements OnInit {
       this.service.mensagem('Preencha todos os campos!')
     }
   } 
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  findAll() {
+    this.service.findAll().subscribe(resposta => {
+      this.dataSource = new MatTableDataSource(resposta);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
 }

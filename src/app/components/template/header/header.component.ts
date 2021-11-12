@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGuard } from '../telalogin/auth.guard';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthGuard) { }
 
-  ngOnInit(): void {
+  mostrarMenu: boolean = false;
+  
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
   }
 
   RemoveToken() {
     return new Promise((resolve) => {
-      window.localStorage.removeItem('token')
+      window.localStorage.removeItem('id')
+      window.localStorage.removeItem('user')
+      window.localStorage.removeItem('password')
       resolve(true)
     })
   }

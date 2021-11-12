@@ -30,7 +30,8 @@ export class VendasService {
   }
 
   create(id: Number,venda: Vendas,peso: Number): Observable<Vendas>{
-    const url = `${this.baseUrl}venda?usuario=1&lote=${id}&peso=${peso}`
+    const id_user = window.localStorage.getItem('id');
+    const url = `${this.baseUrl}venda?usuario=${id_user}&lote=${id}&peso=${peso}`
     return this.http.post<Vendas>(url, venda)
   }
 

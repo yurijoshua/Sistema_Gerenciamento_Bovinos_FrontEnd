@@ -22,7 +22,6 @@ export class TelaloginComponent implements OnInit {
   async onSubmit() {
     try {
       const result = await this.service.login(this.login)
-      console.log("login efetuado: ${result)")
       this.router.navigate(['']);
     }
     catch (error) {

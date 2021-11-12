@@ -6,7 +6,7 @@
             <p class="text-left lead"> Dados ração </p> <hr>
             <div class="form-group col-lg-4 pt-3 pt-lg-1">
                 <label for="inputEmail4"> Ingredientes* </label>
-                <input matInput [(ngModel)]="racao.ingredientes" type="text"  name="ingredientes" class="form-control-forms " placeholder="Ingrediente" required>
+                <input matInput [(ngModel)]="racao.ingredientes" maxlength="254" type="text"  name="ingredientes" class="form-control-forms " placeholder="Ingrediente" required>
                 <div class="invalid-feedback">
                     Preencha o campo acima.
                 </div>
