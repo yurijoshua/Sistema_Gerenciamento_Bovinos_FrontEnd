@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pastos } from '../../relatoriopastos/pastos.model';
 import { Racoes } from '../../relatorioracoes/racoes.model';
+import { Lotes } from '../lotes.model';
+import { LotesService } from '../lotes.service';
 import { PastosbyloteService } from './pastosbylote.service';
 
 @Component({
@@ -20,9 +22,14 @@ export class PastosbyloteComponent implements AfterViewInit {
   
   pastos: Pastos[] = [];
 
+  lote: Lotes = {
+    nomeLote: '',
+    dataCriacao: ''
+  }
+
   dataSource: MatTableDataSource<Pastos>;
 
-  constructor(private service: PastosbyloteService, private aroute: ActivatedRoute, private route: Router ) { 
+  constructor(private service: PastosbyloteService,  private serviceLote: LotesService, private aroute: ActivatedRoute, private route: Router ) { 
     this.dataSource = new MatTableDataSource(this.pastos)
   }
 
@@ -32,6 +39,7 @@ export class PastosbyloteComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
     this.findallpastoslote();
+    this.findById(this.id)
   }
 
   applyFilter(event: Event) {
@@ -48,6 +56,12 @@ export class PastosbyloteComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    })
+  }
+
+  findById(id: String) {
+    this.serviceLote.findById(this.id).subscribe(resposta => {
+      this.lote = resposta;
     })
   }
 

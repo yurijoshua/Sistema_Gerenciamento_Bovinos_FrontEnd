@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Racoes } from '../../relatorioracoes/racoes.model';
 import { RacoesService } from '../../relatorioracoes/racoes.service';
+import { Lotes } from '../lotes.model';
 import { LotesService } from '../lotes.service';
 import { RacoesbyloteService } from './racoesbylote.service';
 
@@ -22,9 +23,15 @@ export class RacoesbyloteComponent implements AfterViewInit {
   
   racoes: Racoes[] = [];
 
+  lote: Lotes = {
+    nomeLote: '',
+    dataCriacao: ''
+  }
+
+
   dataSource: MatTableDataSource<Racoes>;
 
-  constructor(private service: RacoesbyloteService, private aroute: ActivatedRoute, private route: Router ) { 
+  constructor(private service: RacoesbyloteService, private serviceLote: LotesService, private aroute: ActivatedRoute, private route: Router ) { 
     this.dataSource = new MatTableDataSource(this.racoes)
   }
 
@@ -33,7 +40,8 @@ export class RacoesbyloteComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findalllotesracao();
+    this.findalllotesracao()
+    this.findById(this.id)
   }
 
   applyFilter(event: Event) {
@@ -50,6 +58,12 @@ export class RacoesbyloteComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    })
+  }
+
+  findById(id: String) {
+    this.serviceLote.findById(this.id).subscribe(resposta => {
+      this.lote = resposta;
     })
   }
 

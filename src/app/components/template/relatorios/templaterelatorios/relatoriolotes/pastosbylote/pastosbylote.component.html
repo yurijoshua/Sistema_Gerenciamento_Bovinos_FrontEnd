@@ -1,7 +1,8 @@
 <div class="mat-elevation-z8">
     <a href="/relatorios"> <mat-icon> keyboard_backspace </mat-icon> </a>  
     <div>
-      <button (click)="navegarParaCadastroRacao()" class="col-12 btn btn-primary"> Nova racao para o lote </button>
+      <h1> Nome do lote: {{ lote.nomeLote}} </h1>
+      <button (click)="navegarParaCadastroRacao()" class="col-12 btn btn-primary"> Novo pasto para o lote </button>
       <form class="pesq-form">
         <mat-form-field appearance="standard">
           <mat-label>Filter</mat-label>
@@ -19,13 +20,13 @@
 
             <!-- raça Column -->
             <ng-container matColumnDef="tempoInicial">
-                <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Inicial (dia/mês/ano) </label></th>
+                <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo inicial do lote no pasto (dia/mês/ano) </label></th>
                 <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[2]}} </label> </td>
             </ng-container>
 
             <!-- raça Column -->
             <ng-container matColumnDef="tempoFinal">
-              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Final (dia/mês/ano) </label></th>
+              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo final do lote no pasto (dia/mês/ano) </label></th>
               <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[3]}} </label> </td>
             </ng-container>
             

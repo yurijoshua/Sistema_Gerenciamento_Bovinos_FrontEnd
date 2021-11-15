@@ -6,7 +6,7 @@
             <p class="text-left lead"> Dados venda </p> <hr>
             <div class="form-group col-lg-6 pt-3 pt-lg-1">
                 <label for="inputEmail4"> Valor da arroba* </label>
-                <input matInput [(ngModel)]="venda.valorArroba" type="number"  name="valorArroba" min="1" class="form-control-forms" required>
+                <input matInput [(ngModel)]="venda.valorArroba" type="number"  name="valorArroba" min="1" class="form-control-forms" step="any" required>
                 <div class="invalid-feedback">
                     Preencha o campo acima.
                 </div>    

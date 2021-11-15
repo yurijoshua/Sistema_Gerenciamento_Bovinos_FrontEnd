@@ -1,22 +1,18 @@
 <!-- Page content-->
 <div class="form container-fluid">
-    <p class="text-center display-5 text-decoration-underline"> Lote do bovino </p>
+    <p class="text-center display-5 text-decoration-underline"> Ração do lote </p>
     <form class="was-validated" novalidate>
         <div class="row py-4">
-            <p class="text-left lead"> Dados lote do bovino  </p> <hr>
+            <p class="text-left lead"> Dados ração do lote  </p> <hr>
             <div class="row"> 
-                <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
+                <div class="form-group col-lg-6 pt-3 pt-lg-1"> 
                     <label> Tempo inicial* (dia/mês/ano) </label> 
                     <input matInput [(ngModel)]="racoeslote.tempoInicial" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoInicial" class="form-control-forms" placeholder="00/00/0000" required> 
                     <div class="invalid-feedback">
                         Preencha o campo acima.
                     </div>
                 </div> 
-                <div class="form-group col-lg-4 pt-3 pt-lg-1"> 
-                    <label> Tempo final (dia/mês/ano) </label> 
-                    <input matInput [(ngModel)]="racoeslote.tempoFinal" (keyup)="onkey($event)" mask="00/00/0000"  maxlength="10" type="text" name="tempoFinal" class="form-control-forms" placeholder="00/00/0000"> 
-                </div> 
-                <div class="form-group col-lg-4 pt-3 pt-lg-1">
+                <div class="form-group col-lg-6 pt-3 pt-lg-1">
                     <mat-form-field class="w-100">
                         <mat-label> Rações </mat-label>
                         <mat-select (selectionChange)="changeClient($event.value)" required>

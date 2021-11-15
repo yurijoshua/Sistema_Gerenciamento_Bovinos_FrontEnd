@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Lotes } from '../../relatoriolotes/lotes.model';
+import { Racoes } from '../racoes.model';
 import { RacoesService } from '../racoes.service';
 
 @Component({
@@ -19,6 +20,11 @@ export class LotesbyracaoComponent implements AfterViewInit {
   
   lotes: Lotes[] = [];
 
+  racao: Racoes = {
+    ingredientes: '',
+    dataCriacao: ''
+  }
+
   dataSource: MatTableDataSource<Lotes>;
 
   constructor(private service: RacoesService, private aroute: ActivatedRoute ) { 
@@ -30,7 +36,8 @@ export class LotesbyracaoComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findalllotesracao();
+    this.findalllotesracao()
+    this.findById(this.id)
   }
 
   applyFilter(event: Event) {
@@ -40,6 +47,12 @@ export class LotesbyracaoComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  findById(id: String) {
+    this.service.findById(this.id).subscribe(resposta => {
+      this.racao = resposta;
+    })
   }
 
   findalllotesracao() {

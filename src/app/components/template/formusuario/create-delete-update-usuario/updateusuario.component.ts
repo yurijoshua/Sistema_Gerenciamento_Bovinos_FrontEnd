@@ -44,6 +44,6 @@ export class UpdateusuarioComponent implements OnInit {
   }
   
   cancel(): void {
-    this.route.navigate([`relatorios`])
+    this.route.navigate([`usuario/create`])
   }
 }

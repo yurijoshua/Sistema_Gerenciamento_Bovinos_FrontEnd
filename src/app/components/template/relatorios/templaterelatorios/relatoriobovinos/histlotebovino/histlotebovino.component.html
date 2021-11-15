@@ -1,6 +1,7 @@
 <div class="mat-elevation-z8">
     <a href="/relatorios"> <mat-icon> keyboard_backspace </mat-icon> </a>  
     <div>
+      <h1> Brinco: {{bovino.brinco}} </h1>
       <button (click)="navegarParaCadastroPeso()" class="col-12 btn btn-primary"> Novo lote para o bovino </button>
       <div class="row">
         <div class="col-sm-10">
@@ -23,13 +24,13 @@
 
             <!-- brinco Column -->
             <ng-container matColumnDef="tempoInicial">
-              <th class="margin-th table-light text-dark mat-peso" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Inicial (dia/mês/ano) </label></th>
+              <th class="margin-th table-light text-dark mat-peso" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo inicial do bovino no lote (dia/mês/ano) </label></th>
               <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[2]}} </label></td>
             </ng-container>
       
             <!-- raça Column -->
             <ng-container matColumnDef="tempoFinal">
-              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Final (dia/mês/ano) </label></th>
+              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo final do bovino no lote (dia/mês/ano) </label></th>
               <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[3]}} </label></td>
             </ng-container>
             

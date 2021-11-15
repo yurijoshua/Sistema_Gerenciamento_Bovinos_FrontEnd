@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Lotes } from '../../relatoriolotes/lotes.model';
+import { Pastos } from '../pastos.model';
 import { PastosService } from '../pastos.service';
 
 @Component({
@@ -19,6 +20,11 @@ export class LotesbypastoComponent implements AfterViewInit {
   
   lotes: Lotes[] = [];
 
+  pasto: Pastos = {
+    nomePasto: '',
+    dataCriacao: ''
+  }
+
   dataSource: MatTableDataSource<Lotes>;
 
   constructor(private service: PastosService, private aroute: ActivatedRoute ) { 
@@ -30,7 +36,8 @@ export class LotesbypastoComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findalllotespasto();
+    this.findalllotespasto()
+    this.findById(this.id)
   }
 
   applyFilter(event: Event) {
@@ -47,6 +54,12 @@ export class LotesbypastoComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    })
+  }
+
+  findById(id: String) {
+    this.service.findById(this.id).subscribe(resposta => {
+      this.pasto = resposta;
     })
   }
 

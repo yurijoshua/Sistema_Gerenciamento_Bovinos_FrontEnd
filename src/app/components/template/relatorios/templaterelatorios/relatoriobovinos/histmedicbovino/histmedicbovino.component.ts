@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Bovinos } from '../bovinos.model';
+import { BovinosService } from '../bovinos.service';
 import { MedicByBovino } from './histmedicbovino.model';
 import { HistmedicbovinoService } from './histmedicbovino.service';
 
@@ -19,7 +21,14 @@ export class HistmedicbovinoComponent implements AfterViewInit {
   
   medbov: MedicByBovino[] = [];
 
-  constructor(private service: HistmedicbovinoService, private route: Router,private aroute: ActivatedRoute ) { 
+  bovino: Bovinos = {
+    brinco: '',
+    raca: '',
+    dataCriacao: '',
+    status: ''
+  };
+
+  constructor(private service: HistmedicbovinoService,  private serviceAnimal: BovinosService, private route: Router,private aroute: ActivatedRoute ) { 
     this.dataSource = new MatTableDataSource(this.medbov);
   }
 
@@ -28,6 +37,7 @@ export class HistmedicbovinoComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
     this.findAll()
+    this.findById(this.id)
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; 
@@ -47,6 +57,12 @@ export class HistmedicbovinoComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    })
+  }
+
+  findById(id: String) {
+    this.serviceAnimal.findById(this.id).subscribe(resposta => {
+      this.bovino = resposta;
     })
   }
 

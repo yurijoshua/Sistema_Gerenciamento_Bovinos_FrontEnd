@@ -2,6 +2,8 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Bovinos } from '../bovinos.model';
+import { BovinosService } from '../bovinos.service';
 import { LoteByBovino } from './histlotebovino.model';
 import { HistlotebovinoService } from './histlotebovino.service';
 
@@ -17,8 +19,15 @@ export class HistlotebovinoComponent implements AfterViewInit {
   displayedColumns: string[] = ['nomeLote','tempoInicial','tempoFinal','acoes'];
   
   LoteByBovino: LoteByBovino[] = [];
+
+  bovino: Bovinos = {
+    brinco: '',
+    raca: '',
+    dataCriacao: '',
+    status: ''
+  };
   
-  constructor(private service: HistlotebovinoService, private route: Router,private aroute: ActivatedRoute ) { 
+  constructor(private service: HistlotebovinoService,  private serviceAnimal: BovinosService, private route: Router,private aroute: ActivatedRoute ) { 
     this.dataSource = new MatTableDataSource(this.LoteByBovino);
   }
 
@@ -27,6 +36,7 @@ export class HistlotebovinoComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
     this.findAll()
+    this.findById(this.id)
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; 
@@ -44,6 +54,12 @@ export class HistlotebovinoComponent implements AfterViewInit {
     this.service.findAll(this.id).subscribe(resposta => {
       this.dataSource = new MatTableDataSource(resposta);
       this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  findById(id: String) {
+    this.serviceAnimal.findById(this.id).subscribe(resposta => {
+      this.bovino = resposta;
     })
   }
 

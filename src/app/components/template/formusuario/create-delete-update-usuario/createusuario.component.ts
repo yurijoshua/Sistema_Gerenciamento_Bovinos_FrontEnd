@@ -42,7 +42,7 @@ export class CreateusuarioComponent implements OnInit {
     if(this.usuario.nome != '' && this.usuario.usuario != '' && this.usuario.senha != '')
     {   
       this.service.create(this.usuario).subscribe((resposta) => {
-        this.route.navigate(['relatorios'])
+        this.route.navigate(['usuario/create'])
         this.service.mensagem('Usuario cadastrado com sucesso!');
       }, err => {
         this.service.mensagem(err.error.message)

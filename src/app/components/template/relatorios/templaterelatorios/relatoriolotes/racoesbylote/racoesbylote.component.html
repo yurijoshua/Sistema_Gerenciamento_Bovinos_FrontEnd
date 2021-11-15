@@ -1,6 +1,7 @@
 <div class="mat-elevation-z8">
     <a href="/relatorios"> <mat-icon> keyboard_backspace </mat-icon> </a>  
     <div>
+      <h1> Nome do lote: {{ lote.nomeLote}} </h1>
       <button (click)="navegarParaCadastroRacao()" class="col-12 btn btn-primary"> Nova racao para o lote </button>
       <form class="pesq-form">
         <mat-form-field appearance="standard">
@@ -13,19 +14,19 @@
           
             <!-- brinco Column -->
             <ng-container matColumnDef="ingredientes">
-              <th class="margin-th table-light text-dark mat-peso" mat-header-cell *matHeaderCellDef> <label class='lead'> Ingrediente </label></th>
+              <th class="margin-th table-light text-dark mat-peso" mat-header-cell *matHeaderCellDef> <label class='lead'> Ingredientes </label></th>
               <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[1]}} </label> </td>
             </ng-container>
 
             <!-- raça Column -->
             <ng-container matColumnDef="tempoInicial">
-                <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Inicial (dia/mês/ano) </label></th>
+                <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo incial da ração para o lote (dia/mês/ano) </label></th>
                 <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[2]}} </label> </td>
             </ng-container>
 
             <!-- raça Column -->
             <ng-container matColumnDef="tempoFinal">
-              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo Final (dia/mês/ano) </label></th>
+              <th class="margin-th table-light text-dark mat-datapesagem" mat-header-cell *matHeaderCellDef> <label class='lead'> Tempo final da ração para o lote  (dia/mês/ano) </label></th>
               <td class="margin-td" mat-cell *matCellDef="let element"> <label class='lead'> {{element[3]}} </label> </td>
             </ng-container>
             

@@ -30,7 +30,7 @@ export class AccountService {
     if(result[0]!=null)
     {
         window.localStorage.setItem('id', result[0][0])
-        window.localStorage.setItem('user', result[0][2])
+        window.localStorage.setItem('user', result[0][4])
         window.localStorage.setItem('password', result[0][3])
         return true
     }

@@ -44,7 +44,7 @@ export class DeleteusuarioComponent implements OnInit {
   }
 
   cancel(): void {
-    this.route.navigate([`relatorios`])
+    this.route.navigate([`usuario/create`])
   }
 
 }

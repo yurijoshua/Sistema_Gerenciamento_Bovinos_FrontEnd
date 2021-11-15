@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Bovinos } from '../../relatoriobovinos/bovinos.model';
+import { Medicacoes } from '../medicacoes.model';
 import { MedicacoesService } from '../medicacoes.service';
 
 @Component({
@@ -19,6 +20,12 @@ export class BovinosbymedicacaoComponent implements AfterViewInit {
   
   bovinos: Bovinos[] = [];
 
+  medic: Medicacoes = {
+    periodicidade: '',
+    nomeMedicacao: '',
+    loteMedicacao: ''
+  }
+
   dataSource: MatTableDataSource<Bovinos>;
 
   constructor(private service: MedicacoesService, private aroute: ActivatedRoute ) { 
@@ -30,7 +37,8 @@ export class BovinosbymedicacaoComponent implements AfterViewInit {
   
   ngAfterViewInit() {
     this.id = this.aroute.snapshot.paramMap.get('id')!
-    this.findAllbovinosbylote();
+    this.findAllbovinosbylote()
+    this.findById(this.id)
   }
 
   applyFilter(event: Event) {
@@ -40,6 +48,12 @@ export class BovinosbymedicacaoComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  findById(id: String) {
+    this.service.findById(this.id).subscribe(resposta => {
+      this.medic = resposta
+    })
   }
 
   findAllbovinosbylote() {
